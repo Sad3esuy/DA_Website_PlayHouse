@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Toy Shop Admin</title>
+  <title>PlayHouseAdmin</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/admin.css">
 </head>
@@ -12,7 +12,7 @@
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <h2>Toy Shop Admin</h2>
+      <img src="../assets/images/LogoAdmin_PlayHouse.svg" alt="logoAdmin">
     </div>
     <div class="nav-menu">
       <div class="nav-item active" data-tab="dashboard">
@@ -96,11 +96,14 @@
         </form>
       </div>
       <div class="data-table">
+        
         <table>
           <thead>
           <tr>
+            <th>Product Id</th>
             <th>Product Name</th>
             <th>Category</th>
+            <th>Image</th>
             <th>Price</th>
             <th>Stock</th>
             <th>Actions</th>
@@ -108,8 +111,22 @@
           </thead>
           <tbody>
           <tr>
+            <td>#1</td>
             <td>LEGO City</td>
             <td>Building Toys</td>
+            <td><img src="../uploads/1736830295287.jpg" alt="Product Image"></td>
+            <td>$29.99</td>
+            <td>24</td>
+            <td>
+              <button class="action-btn btn-edit">Edit</button>
+              <button class="action-btn btn-delete">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>#2</td>
+            <td>LEGO City</td>
+            <td>Building Toys</td>
+            <td><img src="../uploads/1736830295287.jpg" alt="Product Image"></td>
             <td>$29.99</td>
             <td>24</td>
             <td>
@@ -156,7 +173,8 @@
             <td><span class="status-badge status-pending">Pending</span></td>
             <td>$99.99</td>
             <td>
-              <button class="action-btn btn-view">View</button>
+              <button class="action-btn btn-edit">Edit</button>
+              <button class="action-btn btn-delete">Delete</button>
             </td>
           </tr>
           <!-- More order rows -->

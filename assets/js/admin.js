@@ -167,11 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       // Toggle Sidebar
       const sidebar = document.getElementById('sidebar');
-      const toggleButton = document.getElementById('toggleSidebar');
 
-      toggleButton.addEventListener('click', () => {
-          sidebar.classList.toggle('collapsed');
-      });
 
           // Tab Navigation
           const navItems = document.querySelectorAll('.nav-item');
