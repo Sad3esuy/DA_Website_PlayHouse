@@ -1,0 +1,3 @@
+# Cấu hình ứng dụng
+# Kết nối MySQL
+# Kết nối MySQL
