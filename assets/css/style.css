@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.announcement {
+    background-color: #20B2AA; /* Giữ màu này */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+    transition: opacity 0.3s;
+}
+
+.close-btn:hover {
+    opacity: 0.7;
+}
+
+.pc-header {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    gap: 120px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #20B2AA; /* Giữ màu này */
+}
+
+.nav-item {
+    position: relative;
+}
+
+.product-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+}
+
+.lightning-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s;
+}
+
+.product-link:hover .lightning-icon {
+    transform: scale(1.2);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border-radius: 4px;
+    padding: 10px 0;
+}
+
+.nav-item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.dropdown-item:hover {
+    background-color: #f5f5f5;
+    color: #20B2AA; /* Giữ màu này */
+    padding-left: 25px;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.icon-btn {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    transition: transform 0.3s;
+}
+
+.icon-btn:hover {
+    transform: scale(1.1);
+}
+
+.icon-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff4444; /* Giữ màu này */
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    /* Điều chỉnh announcement bar */
+    .announcement {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .close-btn {
+        right: 10px;
+        font-size: 18px;
+    }
+
+    /* Điều chỉnh header */
+    .pc-header {
+        padding: 10px 0;
+    }
+
+    .header-top {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .logo img {
+        height: 40px; /* Giảm kích thước logo */
+    }
+
+    /* Ẩn nav-links và hiển thị menu mobile (nếu cần) */
+    .nav-links {
+        display: none;
+    }
+
+    /* Điều chỉnh dropdown menu */
+    .dropdown-menu {
+        min-width: 180px; /* Thu nhỏ dropdown */
+    }
+
+    /* Điều chỉnh icons */
+    .icons {
+        gap: 15px;
+        justify-content: center; /* Căn giữa các icon */
+    }
+
+    .icon-btn {
+        padding: 6px; /* Giảm padding */
+    }
+
+    .icon-btn img {
+        width: 20px; /* Giảm kích thước icon */
+        height: 20px;
+    }
+
+    .badge {
+        width: 16px; /* Giảm kích thước badge */
+        height: 16px;
+        font-size: 10px;
+    }
+
+    /* Thêm menu mobile (nếu cần) */
+    .mobile-menu-btn {
+        display: block; /* Hiển thị nút menu mobile */
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 24px;
+        color: #333;
+    }
+
+    .mobile-menu {
+        display: none; /* Ẩn menu mobile ban đầu */
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .mobile-menu.active {
+        display: flex; /* Hiển thị menu mobile khi active */
+    }
+
+    .mobile-menu a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        padding: 10px;
+        transition: background-color 0.3s;
+    }
+
+    .mobile-menu a:hover {
+        background-color: #f5f5f5;
+    }
+}
