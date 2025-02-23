@@ -8,212 +8,37 @@
   <link rel="stylesheet" href="../assets/css/admin.css">
 </head>
 <body>
-<div class="container">
-  <!-- Sidebar -->
-  <div class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-      <img src="../assets/images/LogoAdmin_PlayHouse.svg" alt="logoAdmin">
-    </div>
-    <div class="nav-menu">
-      <div class="nav-item active" data-tab="dashboard">
-        <i class="fas fa-chart-pie"></i>
-        <span>Dashboard</span>
+  <div class="container">
+    <!-- Include Sidebar -->
+    <div id="sidebar"></div>
+  
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Include Header -->
+      <div id="headeradmin"></div>
+  
+      <!-- Include Tab Content -->
+      <div class="tab-content active" id="dashboard">
+        <!-- Nội dung dashboard -->
       </div>
-      <div class="nav-item" data-tab="products">
-        <i class="fas fa-box"></i>
-        <span>Products</span>
+  
+      <div class="tab-content" id="products">
+        <!-- Nội dung products -->
       </div>
-      <div class="nav-item" data-tab="orders">
-        <i class="fas fa-shopping-cart"></i>
-        <span>Orders</span>
+  
+      <div class="tab-content" id="orders">
+        <!-- Nội dung orders -->
       </div>
-      <div class="nav-item" data-tab="users">
-        <i class="fas fa-users"></i>
-        <span>Users</span>
+  
+      <div class="tab-content" id="users">
+        <!-- Nội dung users -->
       </div>
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <div class="main-content">
-    <div class="header">
-      <button class="toggle-sidebar" id="toggleSidebar">
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="user-info">
-        <span>Admin User</span>
-        <i class="fas fa-user-circle"></i>
-      </div>
-    </div>
-
-    <!-- Dashboard Tab -->
-    <div class="tab-content active" id="dashboard">
-      <div class="stats-grid">
-        <div class="stat-card">
-          <h3>Tổng doanh thu</h3>
-          <span class="value">$12,345</span>
-          <span class="change">+12%</span>
-        </div>
-        <div class="stat-card">
-          <h3>Số sản phẩm</h3>
-          <span class="value">25</span>
-          <span class="change">+5%</span>
-        </div>
-        <div class="stat-card">
-          <h3>Tổng đơn hàng</h3>
-          <span class="value">156</span>
-          <span class="change">+2%</span>
-        </div>
-        <div class="stat-card">
-          <h3>Số khách hàng</h3>
-          <span class="value">1,234</span>
-          <span class="change">+8%</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Products Tab -->
-    <div class="tab-content" id="products">
-      <button class="add-btn" id="openFormBtn">Thêm mới</button>
-
-      <div class="overlay" id="overlay"></div>
-
-      <div class="add-product-form" id="addProductFormContainer">
-        <h3>Add New Product</h3>
-        <form id="addProductForm">
-          <input type="text" id="productName" placeholder="Product Name" required>
-          <input type="text" id="description" placeholder="Description" required>
-
-          <!-- Chọn ảnh từ thư mục -->
-          <input type="file" id="imageFile" accept="image/*">
-          <img id="previewImage" class="hidden" alt="Image Preview">
-
-          <input type="text" id="productCategory" placeholder="Category" required>
-          <input type="number" id="productPrice" placeholder="Price" required>
-          <input type="number" id="productStock" placeholder="Stock" required>
-
-          <button type="submit" class="action-btn btn-edit">Add Product</button>
-        </form>
-      </div>
-      <div class="data-table">
-        
-        <table>
-          <thead>
-          <tr>
-            <th>Product Id</th>
-            <th>Product Name</th>
-            <th>Category</th>
-            <th>Image</th>
-            <th>Price</th>
-            <th>Stock</th>
-            <th>Actions</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>#1</td>
-            <td>LEGO City</td>
-            <td>Building Toys</td>
-            <td><img src="../uploads/1736830295287.jpg" alt="Product Image"></td>
-            <td>$29.99</td>
-            <td>24</td>
-            <td>
-              <button class="action-btn btn-edit">Edit</button>
-              <button class="action-btn btn-delete">Delete</button>
-            </td>
-          </tr>
-          <tr>
-            <td>#2</td>
-            <td>LEGO City</td>
-            <td>Building Toys</td>
-            <td><img src="../uploads/1736830295287.jpg" alt="Product Image"></td>
-            <td>$29.99</td>
-            <td>24</td>
-            <td>
-              <button class="action-btn btn-edit">Edit</button>
-              <button class="action-btn btn-delete">Delete</button>
-            </td>
-          </tr>
-          <!-- More product rows -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Orders Tab -->
-    <div class="tab-content" id="orders">
-      <div class="update-order-form">
-        <h3>Update Order Status</h3>
-        <form id="updateOrderForm">
-          <input type="text" id="orderId" placeholder="Order ID" required>
-          <select id="orderStatus" required>
-            <option value="Pending">Pending</option>
-            <option value="Completed">Completed</option>
-          </select>
-          <button type="submit" class="action-btn btn-edit">Update Status</button>
-        </form>
-      </div>
-      <div class="data-table">
-        <table>
-          <thead>
-          <tr>
-            <th>Order ID</th>
-            <th>Customer</th>
-            <th>Date</th>
-            <th>Status</th>
-            <th>Total</th>
-            <th>Actions</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>#12345</td>
-            <td>John Doe</td>
-            <td>2024-02-19</td>
-            <td><span class="status-badge status-pending">Pending</span></td>
-            <td>$99.99</td>
-            <td>
-              <button class="action-btn btn-edit">Edit</button>
-              <button class="action-btn btn-delete">Delete</button>
-            </td>
-          </tr>
-          <!-- More order rows -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Users Tab -->
-    <div class="tab-content" id="users">
-      <div class="data-table">
-        <table>
-          <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Join Date</th>
-            <th>Orders</th>
-            <th>Actions</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>Jane Smith</td>
-            <td>jane@example.com</td>
-            <td>2024-01-15</td>
-            <td>5</td>
-            <td>
-              <button class="action-btn btn-view">View Profile</button>
-            </td>
-          </tr>
-          <!-- More user rows -->
-          </tbody>
-        </table>
+      <div class="tab-content" id="banner">
+        <!-- Nội dung banner -->
       </div>
     </div>
   </div>
-</div>
+<!--<script src="../assets/js/test.js"></script>-->
 <script src="../assets/js/admin.js"></script>
-
 </body>
 </html>

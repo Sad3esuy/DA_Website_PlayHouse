@@ -1,213 +1,245 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const openFormBtn = document.getElementById("openFormBtn");
-  // const closeFormBtn = document.getElementById("closeFormBtn");
-  const overlay = document.getElementById("overlay");
-  const addProductFormContainer = document.getElementById("addProductFormContainer");
-  const closeBtn = document.querySelector(".close-btn");
-  const addProductForm = document.getElementById("addProductForm");
-  const productList = document.getElementById("productList");
-  const imageFileInput = document.getElementById("imageFile");
-  const previewImage = document.getElementById("previewImage");
+// Hàm để tải nội dung từ file HTML với Promise
+function loadHTML(id, url) {
+    return new Promise((resolve) => {
+        fetch(url)
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.text();
+            })
+            .then(data => {
+                const container = document.getElementById(id);
+                if (!container) throw new Error(`Container #${id} not found`);
+                container.innerHTML = data;
+                resolve();
+            })
+            .catch(error => {
+                console.error(`Error loading ${url}:`, error);
+                reject(error);
+            });
+    });
+}
 
-  // Hiển thị form thêm sản phẩm
-  openFormBtn.addEventListener("click", function () {
-      overlay.style.display = "block";
-      addProductFormContainer.style.display = "block";
-  });
+// Khởi tạo ứng dụng
+document.addEventListener('DOMContentLoaded', async function () {
+    try {
+        // Tải các thành phần chính
+        await Promise.all([
+            loadHTML('sidebar', '../views/templates/admin/sidebar.html'),
+            loadHTML('headeradmin', '../views/templates/admin/headeradmin.html'),
+            loadHTML('dashboard', '../admin/dashboard.html'),
+            loadHTML('products', '../admin/products.html'),
+            loadHTML('orders', '../admin/orders.html'),
+            loadHTML('users', '../admin/users.html'),
+            loadHTML('banner', '../admin/banner.html')
+        ]);
 
-  // Đóng form khi nhấn vào overlay hoặc nút đóng
-  overlay.addEventListener("click", closeForm);
-  if (closeBtn) {
-      closeBtn.addEventListener("click", closeForm);
-  }
+        // Khởi tạo các module
+        initializeSidebar();
+        initializeProductManagement();
+        initializeOrderManagement();
+        initializeTabs();
+        
+        // Tải dữ liệu ban đầu
+        loadDashboardData();
+        renderProducts();
 
-  function closeForm() {
-      overlay.style.display = "none";
-      addProductFormContainer.style.display = "none";
-  }
-
-  // Xử lý chọn ảnh và hiển thị preview
-  imageFileInput.addEventListener("change", function (event) {
-      const file = event.target.files[0];
-      if (file) {
-          const reader = new FileReader();
-          reader.onload = function (e) {
-              previewImage.src = e.target.result;
-              previewImage.classList.remove("hidden");
-          };
-          reader.readAsDataURL(file);
-      }
-  });
-
-  // Xử lý form khi nhấn "Add Product"
-  addProductForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      // Lấy dữ liệu từ form
-      const productName = document.getElementById("productName").value;
-      const description = document.getElementById("description").value;
-      const imageUrl = previewImage.src; // Lấy ảnh đã chọn
-      const productCategory = document.getElementById("productCategory").value;
-      const productPrice = document.getElementById("productPrice").value;
-      const productStock = document.getElementById("productStock").value;
-
-      if (!productName || !description || !imageUrl || !productCategory || !productPrice || !productStock) {
-          alert("Vui lòng nhập đầy đủ thông tin!");
-          return;
-      }
-
-      // Tạo object sản phẩm
-      const newProduct = {
-          name: productName,
-          description,
-          image: imageUrl,
-          category: productCategory,
-          price: productPrice,
-          stock: productStock,
-      };
-
-      // Lưu vào Local Storage
-      let products = JSON.parse(localStorage.getItem("products")) || [];
-      products.push(newProduct);
-      localStorage.setItem("products", JSON.stringify(products));
-
-      // Hiển thị sản phẩm mới trên danh sách
-      renderProducts();
-
-      // Reset form
-      addProductForm.reset();
-      previewImage.classList.add("hidden");
-      imageFileInput.value = "";
-      closeForm();
-  });
-
-  // Hiển thị danh sách sản phẩm từ Local Storage
-  function renderProducts() {
-      let products = JSON.parse(localStorage.getItem("products")) || [];
-      productList.innerHTML = "";
-      products.forEach((product, index) => {
-          const productItem = document.createElement("div");
-          productItem.classList.add("product-item");
-          productItem.innerHTML = `
-              <img src="${product.image}" alt="${product.name}">
-              <h4>${product.name}</h4>
-              <p>${product.description}</p>
-              <p><strong>Category:</strong> ${product.category}</p>
-              <p><strong>Price:</strong> $${product.price}</p>
-              <p><strong>Stock:</strong> ${product.stock}</p>
-              <button class="delete-btn" data-index="${index}">🗑 Xóa</button>
-          `;
-          productList.appendChild(productItem);
-      });
-
-      // Thêm sự kiện xóa sản phẩm
-      document.querySelectorAll(".delete-btn").forEach((button) => {
-          button.addEventListener("click", function () {
-              const index = this.getAttribute("data-index");
-              let products = JSON.parse(localStorage.getItem("products")) || [];
-              products.splice(index, 1);
-              localStorage.setItem("products", JSON.stringify(products));
-              renderProducts();
-          });
-      });
-  }
-
-  // Gọi renderProducts khi load trang
-  renderProducts();
+    } catch (error) {
+        console.error('Initialization failed:', error);
+    }
 });
 
-          // Add Product Form Submission
-      document.getElementById('addProductForm').addEventListener('submit', function(event) {
-          event.preventDefault();
+// Module quản lý sidebar
+function initializeSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.getElementById('toggleSidebar');
 
-          const productName = document.getElementById('productName').value;
-          const productCategory = document.getElementById('productCategory').value;
-          const productPrice = document.getElementById('productPrice').value;
-          const productStock = document.getElementById('productStock').value;
+    if (toggleBtn && sidebar) {
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+        });
+    }
+}
 
-          // Create a new row in the product table
-          const productTableBody = document.getElementById('productTableBody');
-          const newRow = document.createElement('tr');
-          newRow.innerHTML = `
-              <td>${productName}</td>
-              <td>${productCategory}</td>
-              <td>$${productPrice}</td>
-              <td>${productStock}</td>
-              <td>
-                  <button class="action-btn btn-edit">Edit</button>
-                  <button class="action-btn btn-delete">Delete</button>
-              </td>
-          `;
-          productTableBody.appendChild(newRow);
+// Module quản lý sản phẩm
+function initializeProductManagement() {
+    const productForm = document.getElementById('addProductForm');
+    const productTableBody = document.getElementById('productTableBody');
 
-          // Clear the form
-          document.getElementById('addProductForm').reset();
-      });
+    // Xử lý mở/đóng form
+    document.addEventListener('click', function(event) {
+        if (event.target.matches('#openFormBtn')) {
+            showElement('overlay');
+            showElement('addProductFormContainer');
+        }
+        if (event.target.matches('#overlay, .close-btn')) {
+            hideElement('overlay');
+            hideElement('addProductFormContainer');
+        }
+    });
 
-      // Update Order Form Submission
-      document.getElementById('updateOrderForm').addEventListener('submit', function(event) {
-          event.preventDefault();
+    // Xử lý preview ảnh
+    document.getElementById('imageFile')?.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const preview = document.getElementById('previewImage');
+                preview.src = e.target.result;
+                preview.classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
+        }
+    });
 
-          const orderId = document.getElementById('orderId').value;
-          const orderStatus = document.getElementById('orderStatus').value;
+    // Xử lý submit form
+    if (productForm) {
+        productForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleProductSubmit();
+        });
+    }
 
-          // Find the order in the table and update its status
-          const orderTableBody = document.getElementById('orderTableBody');
-          const rows = orderTableBody.getElementsByTagName('tr');
-          for (let row of rows) {
-              const cells = row.getElementsByTagName('td');
-              if (cells[0].textContent === `#${orderId}`) {
-                  cells[3].innerHTML = `<span class="status-badge status-${orderStatus.toLowerCase()}">${orderStatus}</span>`;
-                  break;
-              }
-          }
+    // Xử lý xóa sản phẩm
+    if (productTableBody) {
+        productTableBody.addEventListener('click', function(e) {
+            if (e.target.matches('.btn-delete')) {
+                const row = e.target.closest('tr');
+                const productId = row.dataset.productId;
+                deleteProduct(productId);
+            }
+        });
+    }
+}
 
-          // Clear the form
-          document.getElementById('updateOrderForm').reset();
-      });
-      // Toggle Sidebar
-      const sidebar = document.getElementById('sidebar');
+// Module quản lý đơn hàng
+function initializeOrderManagement() {
+    const orderForm = document.getElementById('updateOrderForm');
+    
+    if (orderForm) {
+        orderForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const orderId = document.getElementById('orderId').value;
+            const newStatus = document.getElementById('orderStatus').value;
+            updateOrderStatus(orderId, newStatus);
+        });
+    }
+}
 
+// Module quản lý tabs
+function initializeTabs() {
+    const navItems = document.querySelectorAll('.nav-item');
+    const tabContents = document.querySelectorAll('.tab-content');
 
-          // Tab Navigation
-          const navItems = document.querySelectorAll('.nav-item');
-          const tabContents = document.querySelectorAll('.tab-content');
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Xử lý chuyển tab
+            navItems.forEach(nav => nav.classList.remove('active'));
+            item.classList.add('active');
+            
+            const tabId = item.dataset.tab;
+            tabContents.forEach(tab => {
+                tab.classList.toggle('active', tab.id === tabId);
+            });
 
-          navItems.forEach(item => {
-              item.addEventListener('click', () => {
-                  // Remove active class from all nav items
-                  navItems.forEach(nav => nav.classList.remove('active'));
+            // Tải dữ liệu khi chuyển tab
+            switch(tabId) {
+                case 'products':
+                    loadProductsData();
+                    break;
+                case 'orders':
+                    loadOrdersData();
+                    break;
+                case 'users':
+                    loadUsersData();
+                    break;
+            }
+        });
+    });
+}
 
-                  // Add active class to clicked nav item
-                  item.classList.add('active');
+// Các hàm tiện ích
+function showElement(id) {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'block';
+}
 
-                  // Hide all tab contents
-                  tabContents.forEach(tab => tab.classList.remove('active'));
+function hideElement(id) {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+}
 
-                  // Show selected tab content
-                  const tabId = item.getAttribute('data-tab');
-                  document.getElementById(tabId).classList.add('active');
-              });
-          });
+// Các hàm xử lý dữ liệu
+async function handleProductSubmit() {
+    const newProduct = {
+        name: document.getElementById('productName').value,
+        description: document.getElementById('description').value,
+        image: document.getElementById('previewImage').src,
+        category: document.getElementById('productCategory').value,
+        price: parseFloat(document.getElementById('productPrice').value),
+        stock: parseInt(document.getElementById('productStock').value)
+    };
 
-          // Sample data loading (you would typically fetch this from an API)
-          function loadDashboardData() {
-              // Implementation for loading dashboard data
-          }
+    try {
+        // Giả lập API call
+        await fakeApiCall('/products', 'POST', newProduct);
+        renderProducts();
+        hideElement('overlay');
+        hideElement('addProductFormContainer');
+        document.getElementById('addProductForm').reset();
+    } catch (error) {
+        alert('Error saving product: ' + error.message);
+    }
+}
 
-          function loadProductsData() {
-              // Implementation for loading products data
-          }
+async function fakeApiCall(endpoint, data) {
+    // Giả lập API call với độ trễ
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // Logic lưu vào localStorage
+            if (endpoint === '/products') {
+                const products = JSON.parse(localStorage.getItem('products') || '[]');
+                products.push({...data, id: Date.now()});
+                localStorage.setItem('products', JSON.stringify(products));
+            }
+            resolve({ status: 'success' });
+        }, 500);
+    });
+}
 
-          function loadOrdersData() {
-              // Implementation for loading orders data
-          }
+// Các hàm render dữ liệu
+function renderProducts() {
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+    const container = document.getElementById('productList') || document.getElementById('productTableBody');
+    
+    if (container) {
+        container.innerHTML = products.map(product => `
+            <tr data-product-id="${product.id}">
+                <td>${product.name}</td>
+                <td>${product.category}</td>
+                <td>$${product.price.toFixed(2)}</td>
+                <td>${product.stock}</td>
+                <td>
+                    <button class="action-btn btn-edit">Edit</button>
+                    <button class="action-btn btn-delete">Delete</button>
+                </td>
+            </tr>
+        `).join('');
+    }
+}
 
-          function loadUsersData() {
-              // Implementation for loading users data
-          }
+// Các hàm load dữ liệu
+async function loadDashboardData() {
+    // Implement dashboard data loading
+}
 
-          // Initialize the dashboard
-          document.addEventListener('DOMContentLoaded', () => {
-              loadDashboardData();
-          });
+async function loadProductsData() {
+    // Implement products data loading
+}
+
+async function loadOrdersData() {
+    // Implement orders data loading
+}
+
+async function loadUsersData() {
+    // Implement users data loading
+}

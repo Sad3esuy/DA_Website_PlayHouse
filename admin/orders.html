@@ -1,0 +1,42 @@
+    <!-- Orders Tab -->
+    <div class="tab-content" id="orders">
+        <div class="update-order-form">
+          <h3>Update Order Status</h3>
+          <form id="updateOrderForm">
+            <input type="text" id="orderId" placeholder="Order ID" required>
+            <select id="orderStatus" required>
+              <option value="Pending">Pending</option>
+              <option value="Completed">Completed</option>
+            </select>
+            <button type="submit" class="action-btn btn-edit">Update Status</button>
+          </form>
+        </div>
+        <div class="data-table">
+          <table>
+            <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Total</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>#12345</td>
+              <td>John Doe</td>
+              <td>2024-02-19</td>
+              <td><span class="status-badge status-pending">Pending</span></td>
+              <td>$99.99</td>
+              <td>
+                <button class="action-btn btn-edit">Edit</button>
+                <button class="action-btn btn-delete">Delete</button>
+              </td>
+            </tr>
+            <!-- More order rows -->
+            </tbody>
+          </table>
+        </div>
+      </div>
