@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/search.css">
 </head>
 
 <body>
@@ -53,7 +54,7 @@
                     </div>
                 </nav>
                 <nav class="icons">
-                    <button class="icon-btn btn-search" title="Tìm kiếm">
+                    <button class="icon-btn btn-search" id="toggleSearch" title="Tìm kiếm">
                         <img src="../assets/images/search.png" alt="Search">
                     </button>
                     <button class="icon-btn" title="Tài khoản">
@@ -71,6 +72,40 @@
             </div>
         </div>
     </header>
+    <!-- Khối Tìm Kiếm Ẩn (Slide-down) -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-overlay-content container">
+            <!-- Logo bên trái (nếu bạn muốn lặp lại logo) -->
+            <div class="logo">
+                <a href="#"><img src="../assets/images/Logo_PlayHouse.gif" alt="PlayHouse Logo"></a>
+            </div>
+
+            <!-- Ô nhập search ở giữa -->
+            <div class="search-box">
+                <input type="text" placeholder="Tìm theo tên sản phẩm..." />
+                <button><img src="../assets/images/search-white.png" alt="Search"></button>
+            </div>
+
+            <!-- Icon bên phải (nếu cần) -->
+            <div class="icons">
+                <button class="icon-btn btn-search" id="toggleSearch" title="Tìm kiếm">
+                    <img src="../assets/images/search.png" alt="Search">
+                </button>
+                <button class="icon-btn" title="Tài khoản">
+                    <img src="../assets/images/user.png" alt="User">
+                </button>
+                <button class="icon-btn" title="Yêu thích">
+                    <img src="../assets/images/heart.png    " alt="Heart">
+                    <span class="badge">1</span>
+                </button>
+                <button class="icon-btn" title="Giỏ hàng">
+                    <img src="../assets/images/shopcart.png" alt="Cart">
+                    <span class="badge">0</span>
+                </button>
+            </div>
+            <!-- <button class="close-search" id="closeSearch">&times;</button> -->
+        </div>
+    </div>
     <main>
         <div class="container">
             <h1>tess</h1>
@@ -119,6 +154,7 @@
         <div class="footer-bottom">
             <p>© 2025 Shop Phụ Kiện, Gấu Bông, Mô Hình. All rights reserved.</p>
         </div>
+        <script src="../assets/js/search.js"></script>
     </footer>
 </body>
 
