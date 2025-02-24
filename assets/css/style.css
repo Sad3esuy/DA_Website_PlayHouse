@@ -83,6 +83,13 @@
 .nav-item {
     position: relative;
 }
+.nav-item>a>img {
+    width: 15px;
+    height: 15px;
+}
+.nav-item:hover{
+    color: #20B2AA;
+}
 
 .product-link {
     display: flex;
@@ -175,6 +182,10 @@
     justify-content: center;
     font-size: 12px;
     font-weight: bold;
+}
+
+.search-container {
+    transition: transform 0.3s ease-in-out;
 }
 
 @media (max-width: 768px) {
