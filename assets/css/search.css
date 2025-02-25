@@ -2,30 +2,69 @@
   Search Overlay (slide-down)
 **********************************/
 .search-overlay {
-    position: fixed;      /* Luôn dính lên đầu màn hình */
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 40px 0;      /* Tạo khoảng trống trên/dưới */
-    transform: translateY(-100%); /* Ẩn ở trên */
-    transition: transform 0.3s ease;
-    z-index: 9999;        /* Đảm bảo nằm trên header */
+  position: fixed;      /* Luôn dính lên đầu màn hình */
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 40px 0;      /* Tạo khoảng trống trên/dưới */
+  transform: translateY(-100%); /* Ẩn ở trên */
+  transition: transform 0.3s ease;
+  z-index: 999;        /* Đảm bảo nằm trên header */
+}
+
+/* Khi thêm class .active => trượt xuống */
+.search-overlay.active {
+  transform: translateY(0);
+}
+
+
+.search-overlay-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Tùy chỉnh khung search-box */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.search-box input {
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 500px;   /* Hoặc tuỳ chỉnh */
+  max-width: 100%;
+}
+.search-box button {
+  padding: 7px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #20B2AA;
+  color: #fff;
+  border-radius: 4px;
+}
+.search-box img {
+  width: 30px;
+  height: 30px;
+}
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+  .search-overlay {
+    padding: 42px 10px; /* Giảm padding cho mobile */
   }
-  
-  /* Khi thêm class .active => trượt xuống */
-  .search-overlay.active {
-    transform: translateY(0);
+  /* Ẩn logo và icons */
+  .search-overlay-content .logo {
+    display: none;
   }
-  
-  .search-overlay-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .search-overlay-content .icons {
+    display: none;
   }
-  
-  /* Tùy chỉnh khung search-box */
   .search-box {
     display: flex;
     align-items: center;
@@ -36,7 +75,7 @@
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 500px;   /* Hoặc tuỳ chỉnh */
+    width: 300px;   /* Hoặc tuỳ chỉnh */
     max-width: 100%;
   }
   .search-box button {
@@ -52,4 +91,4 @@
     width: 30px;
     height: 30px;
   }
-  
+}

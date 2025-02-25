@@ -1,0 +1,455 @@
+/* Auth Modal Styles */
+.auth-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .auth-modal.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .auth-container {
+    background-color: white;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    padding: 30px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s;
+    z-index: 10;
+  }
+  
+  .close-modal:hover {
+    color: #20B2AA;
+  }
+  
+  /* Tabs */
+  .auth-tabs {
+    display: flex;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .auth-tab {
+    flex: 1;
+    padding: 15px 0;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #666;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .auth-tab:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #20B2AA;
+    transition: width 0.3s;
+  }
+  
+  .auth-tab.active {
+    color: #20B2AA;
+  }
+  
+  .auth-tab.active:after {
+    width: 100%;
+  }
+  
+  /* Forms */
+  .auth-form {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s;
+  }
+  
+  .auth-form.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .auth-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 22px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+  }
+  .form-group label span {
+    color: #f00;
+  }
+  
+  .required {
+    color: var(--danger);
+  }
+  .form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus {
+    border-color: #20B2AA;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(107, 253, 255, 0.2);
+  }
+  
+  .password-input {
+    position: relative;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+  }
+  
+  .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  .remember-me {
+    display: flex;
+    align-items: center;
+  }
+  
+  .remember-me input {
+    margin-right: 8px;
+  }
+  
+  #forgotPasswordBtn {
+    background: none;
+    border: none;
+    color: #4193ea;
+    font-size: 14px;
+    cursor: pointer;
+    /* text-decoration: underline; */
+  }
+  
+  .auth-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #20B2AA;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .auth-btn:hover {
+    background-color: #23d3ca;
+  }
+  
+  /* Social Login */
+  .social-login {
+    margin-top: 25px;
+    text-align: center;
+  }
+  
+  .social-login p {
+    color: #666;
+    margin-bottom: 15px;
+    position: relative;
+  }
+  
+  .social-login p:before,
+  .social-login p:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background-color: #ddd;
+  }
+  
+  .social-login p:before {
+    left: 0;
+  }
+  
+  .social-login p:after {
+    right: 0;
+  }
+  
+  .social-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .social-btn img {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .social-btn.facebook {
+    background-color: #4267B2;
+    color: white;
+  }
+  
+  .social-btn.facebook:hover {
+    background-color: #365899;
+  }
+  
+  .social-btn.google {
+    background-color: white;
+    color: #333;
+  }
+  
+  .social-btn.google:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Forgot Password Form */
+  .back-to-login {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    background: none;
+    border: none;
+    color: #4193ea;
+    /* text-decoration: underline; */
+    cursor: pointer;
+  }
+  /* Ẩn thanh cuộn trên Chrome, Edge, Safari */
+  .auth-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Ẩn thanh cuộn trên Firefox */
+  .auth-container {
+    scrollbar-width: none;
+  }
+  
+  /* Ẩn thanh cuộn trên IE, Edge cũ */
+  .auth-container {
+    -ms-overflow-style: none;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  
+  /* Mobile animations */
+  @keyframes mobileSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  
+  /* Responsive styles for mobile */
+  @media (max-width: 768px) {
+    .auth-modal.active {
+      display: flex;
+      animation: fadeIn 0.3s ease;
+      align-items: center; /* Căn giữa theo chiều dọc */
+      justify-content: center; /* Căn giữa theo chiều ngang */
+    }
+  
+    .auth-container {
+      max-width: 90%; /* Giới hạn chiều rộng */
+      width: 100%;
+      border-radius: 12px; /* Bo tròn đều các góc */
+      /* animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1); */
+      padding: 25px 20px;
+      max-height: 85vh;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      position: relative;
+      margin: 0 auto; /* Căn giữa */
+    }
+  
+    .close-modal {
+      top: 15px;
+      right: 15px;
+      font-size: 22px;
+      color: #555;
+    }
+  
+    .auth-tabs {
+      margin-bottom: 22px;
+    }
+  
+    .auth-tab {
+      font-size: 15px;
+      padding: 12px 0;
+      font-weight: 500;
+    }
+  
+    .auth-form h2 {
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+  
+    .form-group {
+      margin-bottom: 16px;
+    }
+  
+    .form-group label {
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+  
+    .form-group input {
+      padding: 12px 15px;
+      font-size: 15px;
+      border-radius: 6px;
+    }
+  
+    .auth-btn {
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 6px;
+      margin-top: 5px;
+    }
+  
+    .form-options {
+      margin-bottom: 18px;
+    }
+  
+    /* Social buttons in a more compact layout */
+    .social-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .social-btn {
+      padding: 12px;
+      font-size: 14px;
+      justify-content: center;
+    }
+  
+    /* Optimize transition for mobile */
+    .auth-form {
+      transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+    }
+    
+    .auth-form.active {
+      transition-delay: 0.05s;
+    }
+  
+    /* Adjust the social login divider for mobile */
+    .social-login p:before,
+    .social-login p:after {
+      width: 25%;
+    }
+  }
+  
+  /* Fix for very small screens */
+  @media (max-width: 360px) {
+    .auth-container {
+      max-width: 95%;
+      padding: 20px 16px;
+    }
+    
+    .form-options {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    #forgotPasswordBtn {
+      margin-left: 2px;
+    }
+  }

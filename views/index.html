@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="stylesheet" href="../assets/css/search.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
 </head>
 
 <body>
@@ -57,7 +58,7 @@
                     <button class="icon-btn btn-search" id="toggleSearch" title="Tìm kiếm">
                         <img src="../assets/images/search.png" alt="Search">
                     </button>
-                    <button class="icon-btn" title="Tài khoản">
+                    <button class="icon-btn" id="userBtnHeader" title="Tài khoản">
                         <img src="../assets/images/user.png" alt="User">
                     </button>
                     <button class="icon-btn" title="Yêu thích">
@@ -91,11 +92,11 @@
                 <button class="icon-btn btn-search" id="toggleSearch" title="Tìm kiếm">
                     <img src="../assets/images/search.png" alt="Search">
                 </button>
-                <button class="icon-btn" title="Tài khoản">
+                <button class="icon-btn" id="userBtnOverlay" title="Tài khoản">
                     <img src="../assets/images/user.png" alt="User">
                 </button>
                 <button class="icon-btn" title="Yêu thích">
-                    <img src="../assets/images/heart.png    " alt="Heart">
+                    <img src="../assets/images/heart.png" alt="Heart">
                     <span class="badge">1</span>
                 </button>
                 <button class="icon-btn" title="Giỏ hàng">
@@ -103,7 +104,127 @@
                     <span class="badge">0</span>
                 </button>
             </div>
-            <!-- <button class="close-search" id="closeSearch">&times;</button> -->
+        </div>
+    </div>
+    <!-- Modal Login/Register -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-container">
+            <button class="close-modal" id="closeAuthModal">&times;</button>
+
+            <!-- Navigation Tabs -->
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Đăng nhập</button>
+                <button class="auth-tab" data-tab="register">Đăng ký</button>
+            </div>
+
+            <!-- Login Form -->
+            <div class="auth-form active" id="loginForm">
+                <h2>Đăng nhập</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" placeholder="Nhập email của bạn" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Mật khẩu</label>
+                        <div class="password-input">
+                            <input type="password" id="loginPassword" placeholder="Nhập mật khẩu" required>
+                            <button type="button" class="toggle-password">
+                                <i class="material-icons">visibility_off</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-options">
+                        <div class="remember-me">
+                            <input type="checkbox" id="rememberMe">
+                            <label for="rememberMe">Ghi nhớ đăng nhập</label>
+                        </div>
+                        <button type="button" id="forgotPasswordBtn">Quên mật khẩu?</button>
+                    </div>
+                    <button type="submit" class="auth-btn">Đăng nhập</button>
+                </form>
+                <div class="social-login">
+                    <p>Hoặc đăng nhập với</p>
+                    <div class="social-buttons">
+                        <button class="social-btn facebook">
+                            <i class="material-icons">facebook</i>
+                            Facebook
+                        </button>
+                        <button class="social-btn google">
+                            <img src="../assets/images/logo-gg.png" alt="Google">
+                            Google
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Register Form -->
+            <div class="auth-form" id="registerForm">
+                <h2>Đăng ký</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="registerName">Họ <span class="required">*</span></label>
+                        <input type="text" id="registerName" placeholder="Họ" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerName">Tên <span class="required">*</span></label>
+                        <input type="text" id="registerName" placeholder="Tên" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPhone">Số điện thoại <span class="required">*</span></label>
+                        <input type="tel" id="registerPhone" placeholder="Số điện thoại" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email <span class="required">*</span></label>
+                        <input type="email" id="registerEmail" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Mật khẩu <span class="required">*</span></label>
+                        <div class="password-input">
+                            <input type="password" id="registerPassword" placeholder="Mật khẩu" required>
+                            <button type="button" class="toggle-password">
+                                <i class="material-icons">visibility_off</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-options">
+                        <div class="remember-me">
+                            <input type="checkbox" id="agreeTerms" required>
+                            <label for="agreeTerms">Tôi đồng ý với <a href="#">Điều khoản dịch vụ</a> và <a
+                                    href="#">Chính sách bảo mật</a></label>
+                        </div>
+                    </div>
+                    <button type="submit" class="auth-btn">Đăng ký</button>
+                </form>
+                <div class="social-login">
+                    <p>Hoặc đăng ký với</p>
+                    <div class="social-buttons">
+                        <button class="social-btn facebook">
+                            <i class="material-icons">facebook</i>
+                            Facebook
+                        </button>
+                        <button class="social-btn google">
+                            <img src="../assets/images/logo-gg.png" alt="Google">
+                            Google
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forgot Password Form -->
+            <div class="auth-form" id="forgotPasswordForm">
+                <h2>Quên mật khẩu</h2>
+                <!-- <p></p> -->
+                <form>
+                    <div class="form-group">
+                        <label for="forgotEmail">Vui lòng nhập email đã đăng ký để đặt lại mật khẩu. <span
+                                class="required">*</span></label>
+                        <input type="email" id="forgotEmail" placeholder="Nhập email của bạn" required>
+                    </div>
+                    <button type="submit" class="auth-btn">Gửi yêu cầu</button>
+                    <button type="button" class="back-to-login">Quay lại đăng nhập</button>
+                </form>
+            </div>
         </div>
     </div>
     <main>
@@ -155,6 +276,7 @@
             <p>© 2025 Shop Phụ Kiện, Gấu Bông, Mô Hình. All rights reserved.</p>
         </div>
         <script src="../assets/js/search.js"></script>
+        <script src="../assets/js/login.js"></script>
     </footer>
 </body>
 
