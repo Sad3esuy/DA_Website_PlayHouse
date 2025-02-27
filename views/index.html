@@ -22,6 +22,12 @@
     <header class="pc-header">
         <div class="container">
             <div class="header-top">
+                <!-- Mobile Menu Button -->
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
                 <div class="logo">
                     <a href="#"><img src="../assets/images/Logo_PlayHouse.gif" alt="PlayHouse Logo"></a>
                 </div>
@@ -73,7 +79,40 @@
             </div>
         </div>
     </header>
+    <!-- Overlay for mobile menu -->
+    <div class="mobileOverlay" id="mobileOverlay"></div>
+    <!-- Mobile Navigation Menu - Side Drawer Style -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <img src="../assets/images/white-user-toggle.png" alt="User">
+            <div class="account-info" id="mobileAccountInfo">
+                <h3>Tài khoản</h3>
+                <p>Đăng nhập</p>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#"><i class="material-icons">home</i> Trang chủ</a>
+            <a href="#"><i class="material-icons">info</i>Giới thiệu</a>
+            <div class="nav-item">
+                <a href="#" class="product-link" id="mobileProductLink">
+                    <i class="material-icons">shopping_bag</i>Sản phẩm
+                    <span class="arrow">›</span>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-item">Đồ chơi mô hình</a>
+                    <a href="#" class="dropdown-item">Gấu bông</a>
+                    <a href="#" class="dropdown-item">Phụ kiện</a>
+                    <a href="#" class="dropdown-item">Đồ trang trí</a>
+                    <a href="#" class="dropdown-item">Quà tặng</a>
+                    <a href="#" class="dropdown-item">Sản phẩm mới</a>
+                </div>
+            </div>
+            <a href="#"><i class="material-icons">headset_mic</i>Liên hệ</a>
+            <a href="#"><i class="material-icons">local_shipping</i>Kiểm tra đơn hàng</a>
+        </div>
+    </div>
     <!-- Khối Tìm Kiếm Ẩn (Slide-down) -->
+    <div class="overlay" id="overlay"></div>
     <div class="search-overlay" id="searchOverlay">
         <div class="search-overlay-content container">
             <!-- Logo bên trái (nếu bạn muốn lặp lại logo) -->
@@ -229,18 +268,40 @@
     </div>
     <main>
         <div class="container">
-            <h1>tess</h1>
-            <h1>tess</h1>
-            <h1>tess</h1>
-            <h1>tess</h1>
-            <h1>tess</h1>
-            <h1>tess</h1>
-            <h1>tess</h1>
-            <h1>tess</h1>
-            <h1>tess</h1>
-            <h1>tess</h1>
+            <!-- Your main content here -->
+            <h1>Anh tune lỏ làm gì điii</h1>
+            <div style="height: 600px;"></div>
+            <h1>Anh tune lỏ làm gì điii</h1>
+            <h1>Anh tune lỏ làm gì điii</h1>
+            <h1>Anh tune lỏ làm gì điii</h1>
+            <h1>Anh tune lỏ làm gì điii</h1>
         </div>
     </main>
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-bottom-nav">
+        <div class="nav-items">
+            <a href="#" class="nav-item active" id="mobileHomeBtn">
+                <i class="material-icons">home</i>
+                <span>Trang chủ</span>
+            </a>
+            <a href="#" class="nav-item" id="mobileCategoryBtn">
+                <i class="material-icons">category</i>
+                <span>Danh mục</span>
+            </a>
+            <a href="#" class="nav-item" id="mobileCartBtn">
+                <i class="material-icons">shopping_cart</i>
+                <span>Giỏ hàng</span>
+            </a>
+            <a href="#" class="nav-item" id="mobileFavoriteBtn">
+                <i class="material-icons">favorite</i>
+                <span>Yêu thích</span>
+            </a>
+            <a href="#" class="nav-item" id="mobileAccountBtn">
+                <i class="material-icons">person</i>
+                <span>Tài khoản</span>
+            </a>
+        </div>
+    </div>
 
     <footer>
         <div class="footer-content">
@@ -277,6 +338,7 @@
         </div>
         <script src="../assets/js/search.js"></script>
         <script src="../assets/js/login.js"></script>
+        <script src="../assets/js/main.js"></script>
     </footer>
 </body>
 

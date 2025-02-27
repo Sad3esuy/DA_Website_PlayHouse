@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Elements
     const userBtn = document.getElementById('userBtnHeader');
     const userBtnOverlay = document.getElementById('userBtnOverlay');
+    const userMobile = document.getElementById('mobileAccountBtn');
+    const mobileAccountInfo = document.getElementById('mobileAccountInfo');
     const authModal = document.getElementById('authModal');
     const closeAuthModal = document.getElementById('closeAuthModal');
     const authTabs = document.querySelectorAll('.auth-tab');
@@ -16,6 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
     });
     userBtnOverlay.addEventListener('click', function() {
+      authModal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+  });
+  userMobile.addEventListener('click', function() {
+      authModal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+  });
+  mobileAccountInfo.addEventListener('click', function() {
       authModal.classList.add('active');
       document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
   });

@@ -6,7 +6,8 @@
 }
 
 .announcement {
-    background-color: #20B2AA; /* Giữ màu này */
+    background-color: #20B2AA;
+    /* Giữ màu này */
     color: white;
     text-align: center;
     padding: 10px;
@@ -33,7 +34,7 @@
 
 .pc-header {
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -77,17 +78,20 @@
 }
 
 .nav-links a:hover {
-    color: #20B2AA; /* Giữ màu này */
+    color: #20B2AA;
+    /* Giữ màu này */
 }
 
 .nav-item {
     position: relative;
 }
+
 .nav-item>a>img {
     width: 15px;
     height: 15px;
 }
-.nav-item:hover{
+
+.nav-item:hover {
     color: #20B2AA;
 }
 
@@ -114,7 +118,7 @@
     left: 0;
     background: white;
     min-width: 200px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
@@ -140,7 +144,7 @@
 
 .dropdown-item:hover {
     background-color: #f5f5f5;
-    color: #20B2AA; /* Giữ màu này */
+    color: #20B2AA;
     padding-left: 25px;
 }
 
@@ -172,7 +176,8 @@
     position: absolute;
     top: -5px;
     right: -5px;
-    background-color: #ff4444; /* Giữ màu này */
+    background-color: #ff4444;
+    /* Giữ màu này */
     color: white;
     border-radius: 50%;
     width: 18px;
@@ -188,96 +193,277 @@
     transition: transform 0.3s ease-in-out;
 }
 
+/* Mobile Navbar Styles */
+.mobile-menu-btn {
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.mobile-menu-btn .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Hamburger to X animation */
+.mobile-menu-btn.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-btn.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile navbar styles - drawer from left style */
+.mobile-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    max-width: 400px;
+    height: 100vh;
+    background-color: white;
+    z-index: 999;
+    transition: 0.3s ease-in-out;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-nav.active {
+    left: 0;
+}
+
+.mobile-nav-header {
+    background-color: #20B2AA;
+    color: white;
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.mobile-nav-header img {
+    width: 40px;
+    height: 40px;   
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.mobile-nav .account-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav .account-info h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.mobile-nav .account-info p {
+    font-size: 14px;
+    opacity: 0.8;
+    margin: 0;
+    cursor: pointer;
+}
+
+.mobile-nav .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px 0;
+    margin: 0;
+}
+
+.mobile-nav .nav-links a {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+    color: #20B2AA;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.nav-links i{
+    margin-right: 10px;
+}
+.nav-links a{
+    display: flex;
+    align-items: center;
+}
+.mobile-nav .nav-links a:hover {
+    background-color: #f8f8f8;
+}
+
+.mobile-nav .nav-item {
+    position: relative;
+    width: 100%;
+}
+
+.mobile-nav .dropdown-menu {
+    position: static;
+    display: none;
+    width: 100%;
+    box-shadow: none;
+    padding-left: 20px;
+    background-color: #f8f8f8;
+}
+
+.mobile-nav .dropdown-menu a {
+    padding: 12px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-nav .nav-item.active .dropdown-menu {
+    display: block;
+}
+
+.mobile-nav .product-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-nav .mobile-bottom-nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #eee;
+    background-color: white;
+    padding: 10px 0;
+}
+
+.mobile-nav .mobile-bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+}
+
+.mobile-nav .mobile-bottom-nav img,
+.mobile-nav .mobile-bottom-nav i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.mobileOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+  }
+  
+  .mobileOverlay.active {
+    display: block;
+  }
+
+/* Add arrow icon for submenu */
+.nav-item .arrow {
+    margin-left: auto;
+    transition: transform 0.3s;
+}
+
+.nav-item.active .arrow {
+    transform: rotate(180deg);
+}
+        /* Bottom navigation for mobile */
+        .mobile-bottom-nav {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        .mobile-bottom-nav .nav-items {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .mobile-bottom-nav .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+            color: #666;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .mobile-bottom-nav .nav-item i {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .mobile-bottom-nav .nav-item.active {
+            color: #20B2AA;
+        }
+/* Media queries */
 @media (max-width: 768px) {
-    /* Điều chỉnh announcement bar */
-    .announcement {
-        padding: 8px;
-        font-size: 14px;
-    }
-
-    .close-btn {
-        right: 10px;
-        font-size: 18px;
-    }
-
-    /* Điều chỉnh header */
-    .pc-header {
-        padding: 10px 0;
-    }
-
-    .header-top {
-        flex-direction: column;
-        gap: 15px;
-        padding: 10px;
-    }
-
-    .logo img {
-        height: 40px; /* Giảm kích thước logo */
-    }
-
-    /* Ẩn nav-links và hiển thị menu mobile (nếu cần) */
-    .nav-links {
+    .pc-header .navbar {
         display: none;
     }
 
-    /* Điều chỉnh dropdown menu */
-    .dropdown-menu {
-        min-width: 180px; /* Thu nhỏ dropdown */
-    }
-
-    /* Điều chỉnh icons */
-    .icons {
-        gap: 15px;
-        justify-content: center; /* Căn giữa các icon */
-    }
-
-    .icon-btn {
-        padding: 6px; /* Giảm padding */
-    }
-
-    .icon-btn img {
-        width: 20px; /* Giảm kích thước icon */
-        height: 20px;
-    }
-
-    .badge {
-        width: 16px; /* Giảm kích thước badge */
-        height: 16px;
-        font-size: 10px;
-    }
-
-    /* Thêm menu mobile (nếu cần) */
     .mobile-menu-btn {
-        display: block; /* Hiển thị nút menu mobile */
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: 24px;
-        color: #333;
+        display: block;
     }
 
-    .mobile-menu {
-        display: none; /* Ẩn menu mobile ban đầu */
-        flex-direction: column;
-        gap: 10px;
-        padding: 15px;
-        background: white;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    .pc-header .header-top {
+        justify-content: space-between;
+        padding: 15px 0;
+    }
+    .pc-header .logo {
+        width: 50px;
+        height: 50px;
+    }
+    .mobile-bottom-nav {
+        display: block;
+    }
+    /* .pc-header .logo {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        align-items: center;
+        margin-left: 100px;
+    } */
+    /* Ẩn nút user */
+    .icons #userBtnHeader {
+        display: none;
     }
 
-    .mobile-menu.active {
-        display: flex; /* Hiển thị menu mobile khi active */
+    .pc-header .icons {
+        display: flex;
     }
 
-    .mobile-menu a {
-        text-decoration: none;
-        color: #333;
-        font-weight: 500;
-        padding: 10px;
-        transition: background-color 0.3s;
+    .mobile-bottom-nav {
+        display: block;
     }
 
-    .mobile-menu a:hover {
-        background-color: #f5f5f5;
+    main {
+        padding-bottom: 60px;
+        /* Space for bottom nav */
+    }
+
+    .logo img {
+        height: 40px;
+        /* Smaller logo on mobile */
     }
 }

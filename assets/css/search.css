@@ -53,6 +53,20 @@
   width: 30px;
   height: 30px;
 }
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 997;
+}
+
+.overlay.active {
+  display: block;
+}
 /* Responsive cho mobile */
 @media (max-width: 768px) {
   .search-overlay {
@@ -65,18 +79,27 @@
   .search-overlay-content .icons {
     display: none;
   }
+  .search-overlay-content {
+    display: flex;
+    flex-direction: column; /* Sắp xếp theo cột */
+    align-items: center;    /* Căn giữa theo chiều ngang */
+    justify-content: center; /* Căn giữa theo chiều dọc */
+  }
+  /* Giới hạn chiều rộng của ô tìm kiếm để input dài hơn */
   .search-box {
+    width: 100%;
+    max-width: 600px; /* Tăng max-width cho khung tìm kiếm */
     display: flex;
     align-items: center;
     gap: 10px;
+    margin: 0 auto;
   }
   .search-box input {
+    width: 100%;  /* Input chiếm toàn bộ chiều rộng của .search-box */
     padding: 15px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 300px;   /* Hoặc tuỳ chỉnh */
-    max-width: 100%;
   }
   .search-box button {
     padding: 7px 15px;
