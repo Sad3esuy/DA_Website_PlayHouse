@@ -4,6 +4,23 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+/* Đảm bảo chiếm toàn bộ chiều cao màn hình */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* hoặc min-height: 100%; */
+}
+
+/* Sử dụng Flexbox để chia bố cục theo chiều dọc */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Phần nội dung chính sẽ co giãn để đẩy footer xuống cuối */
+main {
+    flex: 1; /* Quan trọng */
+}
 
 .announcement {
     background-color: #20B2AA;

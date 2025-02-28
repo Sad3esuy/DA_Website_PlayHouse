@@ -30,24 +30,24 @@
 .search-box {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0;
 }
 .search-box input {
   padding: 15px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 4px 0 0 4px;
   width: 500px;   /* Hoặc tuỳ chỉnh */
   max-width: 100%;
 }
 .search-box button {
-  padding: 7px 15px;
+  padding: 8px 15px;
   font-size: 16px;
   cursor: pointer;
   border: none;
   background-color: #20B2AA;
   color: #fff;
-  border-radius: 4px;
+  border-radius: 0 4px 4px 0;
 }
 .search-box img {
   width: 30px;
@@ -91,7 +91,7 @@
     max-width: 600px; /* Tăng max-width cho khung tìm kiếm */
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0;
     margin: 0 auto;
   }
   .search-box input {
@@ -99,16 +99,16 @@
     padding: 15px;
     font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 4px 0 0 4px;
   }
   .search-box button {
-    padding: 7px 15px;
+    padding: 8px 15px;
     font-size: 16px;
     cursor: pointer;
     border: none;
     background-color: #20B2AA;
     color: #fff;
-    border-radius: 4px;
+    border-radius: 0 4px 4px 0;
   }
   .search-box img {
     width: 30px;
