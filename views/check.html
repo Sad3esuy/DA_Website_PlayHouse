@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayHouse - Website</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/search.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="stylesheet" href="../assets/css/check.css">
+</head>
+<body>
+    <div class="announcement">
+        WEBSITE CHÍNH THỨC CỦA PLAYHOUSE
+        <button class="close-btn" onclick="this.parentElement.style.display='none'">&times;</button>
+    </div>
+    <!-- Header -->
+    <header class="pc-header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="#"><img src="../assets/images/Logo_PlayHouse.gif" alt="PlayHouse Logo"></a>
+                </div>
+                <nav class="navbar">
+                    <div class="navbar-content">
+                        <div class="nav-links">
+                            <a href="index.html">Trang chủ</a>
+                            <a href="#">Giới thiệu</a>
+                            <div class="nav-item">
+                                <a href="#" class="product-link">
+                                    <svg class="lightning-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                    </svg>
+                                    Sản phẩm
+                                    <img src="../assets/images/down-icon.png" alt="icon-down">
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">bb3</a>
+                                    <a href="#" class="dropdown-item">labubu</a>
+                                    <a href="#" class="dropdown-item">lego</a>
+                                    <a href="#" class="dropdown-item">origami</a>
+                                    <a href="#" class="dropdown-item">mô hình</a>
+                                    <a href="#" class="dropdown-item">lol tuân</a>
+                                </div>
+                            </div>
+                            <a href="#">Liên hệ</a>
+                            <a href="checking.html">Kiểm tra đơn hàng</a>
+
+                        </div>
+                    </div>
+                </nav>
+                <nav class="icons">
+                    <button class="icon-btn btn-search" id="toggleSearch" title="Tìm kiếm">
+                        <img src="../assets/images/search.png" alt="Search">
+                    </button>
+                    <button class="icon-btn" id="userBtnHeader" title="Tài khoản">
+                        <img src="../assets/images/user.png" alt="User">
+                    </button>
+                    <button class="icon-btn" title="Yêu thích">
+                        <img src="../assets/images/heart.png" alt="Heart">
+                        <span class="badge">1</span>
+                    </button>
+                    <button class="icon-btn" title="Giỏ hàng">
+                        <img src="../assets/images/shopcart.png" alt="Cart">
+                        <span class="badge">0</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content - Order Tracking -->
+    <main>
+        <div class="container">
+            <div class="order-tracking-container">
+                <div class="breadcrumb">
+                    <a href="">Trang chủ</a>
+                    <span class="separator">/</span>
+                    <span class="current">Hướng dẫn kiểm tra đơn hàng</span>
+                    <span class="separator">/</span>
+                </div>
+
+                <h1 class="page-title">Hướng dẫn kiểm tra đơn hàng</h1>
+
+                <div class="tracking-form">
+                    <h2>Kiểm tra đơn hàng của bạn</h2>
+                    
+                    <div class="form-group">
+                        <label>Phương thức kiểm tra</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="phone" name="search-method" checked>
+                                <label for="phone">Số điện thoại</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="email" name="search-method">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" id="phoneInputGroup">
+                        <label>Số điện thoại:</label>
+                        <input type="text" placeholder="0909 xxx xxx">
+                    </div>
+                    
+                    <div class="form-group" id="emailInputGroup" style="display: none;">
+                        <label>Email:</label>
+                        <input type="email" placeholder="example@email.com">
+                    </div>
+                    
+                    <div class="captcha-container">
+                        <input type="checkbox" class="captcha-checkbox" id="recaptcha">
+                        <label for="recaptcha" class="captcha-text">Tôi không phải là người máy</label>
+                        <div class="captcha-logo">
+                            <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" height="24" alt="reCAPTCHA">
+                            <span style="font-size: 10px; color: #555;">Bảo mật - Điều khoản</span>
+                        </div>
+                    </div>
+                    
+                    <div class="help-text">
+                        Nếu quý khách có bất kỳ thắc mắc nào, xin vui lòng gọi
+                        <strong></strong>
+                    </div>
+                    
+                    <button class="search-button" id="trackOrderBtn">Xem ngay</button>
+                </div>
+
+                <!-- Order Results Section (hidden by default) -->
+                <div class="order-results" id="orderResults">
+                    <!-- Results will be loaded here via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Include existing scripts -->
+    <script src="../assets/js/search.js"></script>
+    <script src="../assets/js/login.js"></script>
+    
+    <!-- Add Order Tracking specific script -->
+    <script src="../assets/js/check.js"></script>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Về Chúng Tôi</h3>
+                <ul>
+                    <li><a href="#">Giới Thiệu</a></li>
+                    <li><a href="#">Tin Tức</a></li>
+                    <li><a href="#">Tuyển Dụng</a></li>
+                    <li><a href="#">Liên Hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Hỗ Trợ Khách Hàng</h3>
+                <ul>
+                    <li><a href="#">Hướng Dẫn Mua Hàng</a></li>
+                    <li><a href="#">Chính Sách Đổi Trả</a></li>
+                    <li><a href="#">Chính Sách Bảo Hành</a></li>
+                    <li><a href="#">Phương Thức Thanh Toán</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kết Nối Với Chúng Tôi</h3>
+                <div class="social-links">
+                    <a href="#"><i class="material-icons">facebook</i></a>
+                    <a href="#"><i class="material-icons">tiktok</i></a>
+                </div>
+                <p>Hotline: 1900 xxxx</p>
+                <p>Email: support@example.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Shop Phụ Kiện, Gấu Bông, Mô Hình. All rights reserved.</p>
+        </div>
+        <script src="../assets/js/search.js"></script>
+        <script src="../assets/js/login.js"></script>
+    </footer>
+</body>
+</html>
