@@ -93,7 +93,15 @@ main {
     font-weight: 500;
     transition: color 0.3s;
 }
+.nav-links>.navbar-link {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
 
+.nav-links>.navbar-link:hover {
+    border-bottom: #20B2AA 2px solid;
+}
 .nav-links a:hover {
     color: #20B2AA;
     /* Giữ màu này */
