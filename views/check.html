@@ -80,7 +80,7 @@
         <div class="container">
             <div class="order-tracking-container">
                 <div class="breadcrumb">
-                    <a href="">Trang chủ</a>
+                    <a href="index.html">Trang chủ</a>
                     <span class="separator">/</span>
                     <span class="current">Hướng dẫn kiểm tra đơn hàng</span>
                     <span class="separator">/</span>
@@ -88,6 +88,8 @@
 
                 <h1 class="page-title">Hướng dẫn kiểm tra đơn hàng</h1>
 
+                <div class="order-info" style="flex: 1;"></div>
+                <div class="tracking-columns">
                 <div class="tracking-form">
                     <h2>Kiểm tra đơn hàng của bạn</h2>
                     
@@ -129,8 +131,18 @@
                         <strong></strong>
                     </div>
                     
+                    
                     <button class="search-button" id="trackOrderBtn">Xem ngay</button>
                 </div>
+                
+                <!-- Phần text area hiển thị thông tin đơn hàng -->
+                      
+                        <!-- <h2>Thông tin đơn hàng</h2> -->
+                        <textarea id="orderDetails" rows="15" style="width: 70%; padding: 10px; resize: vertical; " placeholder="Thông tin đơn hàng sẽ hiển thị ở đây..." readonly>
+                        </textarea>
+                    </div>
+                </div>
+                
 
                 <!-- Order Results Section (hidden by default) -->
                 <div class="order-results" id="orderResults">

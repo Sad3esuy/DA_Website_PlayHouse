@@ -1,143 +1,189 @@
 .order-tracking-container {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 0;
+  max-width: 1200px; /* Giữ rộng để chứa hai cột */
+  margin: 40px auto;
+  padding: 0;
 }
 
 .breadcrumb {
-    display: flex;
-    margin-bottom: 20px;
-    font-size: 14px;
+  display: flex;
+  margin-bottom: 20px;
+  font-size: 14px;
 }
 
 .breadcrumb a {
-    color: #15a2d0;
-    text-decoration: none;
+  color: #15a2d0;
+  text-decoration: none;
 }
 
 .breadcrumb a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .breadcrumb .separator {
-    margin: 0 8px;
-    color: #666;
+  margin: 0 8px;
+  color: #666;
 }
 
 .breadcrumb .current {
-    color: #333;
-    font-weight: 500;
+  color: #333;
+  font-weight: 500;
+  
 }
 
 .page-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Container mới cho hai cột */
+.tracking-columns {
+  display: flex;
+  gap: 30px; /* Khoảng cách giữa form và textarea */
+  justify-content: center; /* Canh giữa hai cột */
 }
 
 .tracking-form {
-    background-color: #15a2d0;
-    color: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #15a2d0;
+  color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1; /* Chiếm không gian đều */
+  max-width: 500px; /* Giới hạn chiều rộng tối đa */
 }
 
 .tracking-form h2 {
-    margin-bottom: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .form-group {
-    margin-bottom: 15px;
-    color: white;
+  margin-bottom: 15px;
+  color: white;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 8px;
-    color: white;
+  display: block;
+  margin-bottom: 8px;
+  color: white;
 }
 
 .radio-group {
-    display: flex;
-    margin-bottom: 15px;
+  display: flex;
+  margin-bottom: 15px;
 }
 
 .radio-option {
-    margin-right: 20px;
-    display: flex;
-    align-items: center;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .radio-option input {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 input[type="text"],
 input[type="email"] {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
 .captcha-container {
-    background-color: white;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
 }
 
 .captcha-checkbox {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .captcha-text {
-    color: #333;
+  color: #333;
 }
 
 .captcha-logo {
-    margin-left: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .help-text {
-    margin-bottom: 20px;
-    font-size: 14px;
+  margin-bottom: 20px;
+  font-size: 14px;
 }
 
 .search-button {
-    background-color: #ff7200;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    display: block;
-    margin-left: auto;
-    transition: background-color 0.2s;
+  background-color: #ff7200;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  display: block;
+  margin-left: auto;
+  transition: background-color 0.2s;
 }
 
 .search-button:hover {
-    background-color: #e66600;
+  background-color: #e66600;
 }
 
-/* Additional styles for order results (hidden by default) */
+/* Styles cho phần thông tin đơn hàng */
+.order-info {
+  
+}
+
+.order-info h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+}
+
+.order-info textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: vertical;
+  background-color: #fff;
+  min-height: 300px; /* Đảm bảo chiều cao phù hợp với form */
+}
+
+/* Additional styles for order results */
 .order-results {
-    margin-top: 30px;
-    display: none;
+  margin-top: 30px;
+  display: none;
 }
 
 .order-results.show {
-    display: block;
+  display: block;
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 768px) {
+  .tracking-columns {
+    flex-direction: column; /* Xếp dọc trên mobile */
+  }
+
+  .tracking-form,
+  .order-info {
+    max-width: 100%; /* Full width trên mobile */
+  }
 }

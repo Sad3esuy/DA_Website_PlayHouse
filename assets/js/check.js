@@ -18,11 +18,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Track Order Button Click
     const trackOrderBtn = document.getElementById('trackOrderBtn');
-    const orderResults = document.getElementById('orderResults');
+    const orderDetailsTextarea = document.getElementById('orderDetails'); // Thêm tham chiếu đến textarea
     
     trackOrderBtn.addEventListener('click', function() {
         // Here you would normally make an API call to check the order
-        // For demo purposes, we'll just show a sample result
         const method = document.getElementById('phone').checked ? 'phone' : 'email';
         let contactValue = '';
         
@@ -52,25 +51,22 @@ document.addEventListener('DOMContentLoaded', function() {
             trackOrderBtn.textContent = 'Xem ngay';
             trackOrderBtn.disabled = false;
             
-            // Display results - for demo purposes showing "No orders found"
-            orderResults.innerHTML = `
-                <div style="text-align: center; padding: 30px; background: #f8f8f8; border-radius: 8px; margin-top: 20px;">
-                    <img src="../assets/images/no-order.png" alt="No Orders" style="width: 80px; margin-bottom: 15px;">
-                    <h3 style="font-size: 18px; margin-bottom: 10px;">Không tìm thấy đơn hàng</h3>
-                    <p style="color: #666; margin-bottom: 20px;">
-                        Không tìm thấy đơn hàng với thông tin bạn cung cấp. Vui lòng kiểm tra lại hoặc liên hệ hỗ trợ!
-                    </p>
-                    <a href="#" style="display: inline-block; background: #15a2d0; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none;">
-                        Mua sắm ngay
-                    </a>
-                </div>
-            `;
+            // Dữ liệu giả lập để hiển thị trong textarea
+            const orderInfo = contactValue.includes('0909') || contactValue.includes('@example.com') 
+                ? `Thông tin đơn hàng:\n` +
+                  `Mã đơn hàng: DH12345\n` +
+                  `Trạng thái: Đang giao hàng\n` +
+                  `Ngày đặt: 03/03/2025\n` +
+                  `Tổng tiền: 500,000 VNĐ\n` +
+                  `Phương thức liên hệ: ${contactValue}`
+                : `Không tìm thấy đơn hàng với thông tin: ${contactValue}\n` +
+                  `Vui lòng kiểm tra lại hoặc liên hệ hỗ trợ qua hotline 1900 xxxx!`;
+
+            // Điền thông tin vào textarea
+            orderDetailsTextarea.value = orderInfo;
             
-            // Show results section
-            orderResults.classList.add('show');
-            
-            // Scroll to results
-            orderResults.scrollIntoView({ behavior: 'smooth' });
+            // Scroll đến textarea (nếu cần)
+            orderDetailsTextarea.scrollIntoView({ behavior: 'smooth' });
         }, 1500);
     });
 });
