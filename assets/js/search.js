@@ -1,6 +1,7 @@
 const toggleSearchBtn = document.getElementById('toggleSearch');
 const searchOverlay = document.getElementById('searchOverlay');
 const overlay = document.getElementById('overlay');
+const input = document.getElementById('searchInput');
 // Khi click vào nút toggleSearch: mở/đóng overlay
 toggleSearchBtn.addEventListener('click', (e) => {
   e.stopPropagation();
@@ -18,3 +19,32 @@ document.addEventListener('click', (e) => {
     overlay.classList.remove('active');
   }
 });
+
+//animation playholder
+const text = "Tìm kiếm theo tên sản phẩm...";
+let index = 0;
+let forward = true;
+
+function typeEffect() {
+  if (forward) {
+    if (index < text.length) {
+      index++;
+      input.setAttribute('placeholder', text.slice(0, index));
+      setTimeout(typeEffect, 40); // Tốc độ gõ: 150ms mỗi ký tự
+    } else {
+      forward = false;
+      setTimeout(typeEffect, 500); // Dừng lại khi đã gõ hết
+    }
+  } else {
+    if (index > 1) {
+      index--;
+      input.setAttribute('placeholder', text.slice(0, index));
+      setTimeout(typeEffect, 40);
+    } else {
+      forward = true;
+      setTimeout(typeEffect, 5);
+    }
+  }
+}
+
+typeEffect();

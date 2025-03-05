@@ -97,9 +97,15 @@ main {
     display: flex;
     align-items: center;
     padding: 10px;
+    cursor: pointer;
 }
 
 .nav-links>.navbar-link:hover {
+    border-bottom: #20B2AA 2px solid;
+}
+/* Khi một liên kết có class 'active' */
+.nav-links .navbar-link.active {
+    color: #20B2AA;
     border-bottom: #20B2AA 2px solid;
 }
 .nav-links a:hover {
@@ -110,7 +116,9 @@ main {
 .nav-item {
     position: relative;
 }
-
+.nav-item>a:hover{
+    border-bottom: #20B2AA 2px solid;
+}
 .nav-item>a>img {
     width: 15px;
     height: 15px;
