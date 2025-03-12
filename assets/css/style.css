@@ -104,10 +104,10 @@ main {
     border-bottom: #20B2AA 2px solid;
 }
 /* Khi một liên kết có class 'active' */
-.nav-links .navbar-link.active {
+/* .nav-links .navbar-link.active {
     color: #20B2AA;
     border-bottom: #20B2AA 2px solid;
-}
+} */
 .nav-links a:hover {
     color: #20B2AA;
     /* Giữ màu này */

@@ -1,0 +1,292 @@
+/* Featured Products Section */
+.contain_three .section-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .contain_three .section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #20B2AA; /* Giữ màu đen như yêu cầu */
+  }
+  
+  .contain_three .section-header p {
+    font-size: 1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Grid sản phẩm */
+  .contain_three .products-grid {
+    display: grid;
+    gap: 1rem; /* Giảm khoảng cách trên mobile */
+    grid-template-columns: repeat(1, 1fr); /* 1 cột trên mobile */
+    justify-items: center; /* Căn giữa trên mobile */
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) { /* iPad */
+    .contain_three .products-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cột trên iPad */
+        gap: 1.5rem; /* Tăng khoảng cách trên iPad */
+        justify-items: center; /* Căn giữa trên iPad */
+    }
+  }
+  
+  @media (min-width: 1024px) { /* Laptop/Desktop */
+    .contain_three .products-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 cột trên desktop */
+        gap: 2rem; /* Tăng khoảng cách trên desktop */
+        justify-items: stretch; /* Căn đều trên desktop */
+    }
+  }
+  
+  /* Thẻ sản phẩm */
+  .contain_three .product-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    width: 100%; /* Đảm bảo card chiếm toàn bộ chiều rộng của cột */
+    height: 350px;
+    max-width: 300px; /* Giới hạn chiều rộng tối đa */
+  }
+  
+  .contain_three .product-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .contain_three .image-container {
+    position: relative;
+    height: 180px; /* Giảm chiều cao trên mobile */
+    overflow: hidden;
+    width: 100%; /* Đảm bảo container chiếm toàn bộ chiều rộng của product-card */
+  }
+  
+  @media (min-width: 768px) { /* iPad và lớn hơn */
+    .contain_three .image-container {
+        height: 250px; /* Tăng chiều cao trên iPad và desktop */
+    }
+  }
+  
+  .contain_three .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo hình ảnh chiếm toàn bộ ô mà không bị méo hoặc lệch */
+    transition: transform 0.5s ease;
+  }
+  
+  .product-card:hover .image-container img {
+    transform: scale(1.05);
+  }
+  
+  /* Badge - Chỉ áp dụng trong contain_three */
+  .contain_three .badges {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 6px 16px; /* Giữ padding nhỏ trên mobile */
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 9999px;
+    z-index: 2;
+    display: inline-block;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+  .badges{
+    width: 100px;
+    height: 28px; /* Giữ kích thước nhỏ trên mobile */
+  }
+  @media (min-width: 768px) { /* iPad và lớn hơn */
+    .contain_three .badges {
+        padding: 8px 16px; /* Tăng padding trên iPad và desktop */
+        font-size: 0.9rem; /* Tăng font-size trên iPad và desktop */
+    }
+  }
+  
+  /* Overlay buttons khi hover */
+  .contain_three .overlay-buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Giảm khoảng cách trên mobile */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .product-card:hover .overlay-buttons {
+    opacity: 1;
+  }
+  
+  .overlay-buttons button,
+  .overlay-buttons a {
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px; /* Giảm kích thước trên mobile */
+    height: 36px; /* Giảm kích thước trên mobile */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .overlay-buttons button:hover,
+  .overlay-buttons a:hover {
+    background: #20B2AA;
+    transform: scale(1.1);
+  }
+  
+  .overlay-buttons svg {
+    width: 18px; /* Giảm kích thước icon trên mobile */
+    height: 18px; /* Giảm kích thước icon trên mobile */
+    stroke: #333;
+    transition: stroke 0.3s ease;
+  }
+  
+  .overlay-buttons button:hover svg,
+  .overlay-buttons a:hover svg {
+    stroke: #fff;
+  }
+  
+  @media (min-width: 768px) { /* iPad và lớn hơn */
+    .overlay-buttons button,
+    .overlay-buttons a {
+        width: 40px; /* Tăng kích thước trên iPad và desktop */
+        height: 40px; /* Tăng kích thước trên iPad và desktop */
+    }
+  
+    .overlay-buttons svg {
+        width: 20px; /* Tăng kích thước icon trên iPad và desktop */
+        height: 20px; /* Tăng kích thước icon trên iPad và desktop */
+    }
+  
+    .overlay-buttons {
+        gap: 10px; /* Tăng khoảng cách trên iPad và desktop */
+    }
+  }
+  
+  /* Nội dung sản phẩm */
+  .contain_three .product-info {
+    padding: 12px; /* Giảm padding trên mobile */
+  }
+  
+  .contain_three .product-info h3 {
+    font-size: 1rem; /* Giảm font-size trên mobile */
+    margin-bottom: 8px; /* Giảm margin trên mobile */
+    height: 2em; /* Giảm chiều cao của tên sản phẩm trên mobile */
+    overflow: hidden;
+  }
+  
+  .contain_three .price {
+    font-size: 0.9rem; /* Giảm font-size trên mobile */
+    font-weight: bold;
+    color: #20B2AA;
+  }
+  
+  .original-price {
+    font-size: 0.8rem; /* Giảm font-size trên mobile */
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 6px; /* Giảm margin trên mobile */
+  }
+  
+  @media (min-width: 768px) { /* iPad và lớn hơn */
+    .contain_three .product-info {
+        padding: 15px; /* Tăng padding trên iPad và desktop */
+    }
+  
+    .contain_three .product-info h3 {
+        font-size: 1.1rem; /* Tăng font-size trên iPad và desktop */
+        margin-bottom: 10px; /* Tăng margin trên iPad và desktop */
+        height: 2.2em; /* Tăng chiều cao của tên sản phẩm trên iPad và desktop */
+        /* white-space: nowrap; */
+        text-align: center;
+    }
+  
+    .contain_three .price {
+        font-size: 1rem; /* Tăng font-size trên iPad và desktop */
+    }
+  
+    .original-price {
+        font-size: 0.9rem; /* Tăng font-size trên iPad và desktop */
+        margin-left: 8px; /* Tăng margin trên iPad và desktop */
+    }
+  }
+  
+  /* Button Xem tất cả */
+  .view-all {
+    text-align: center;
+    margin-top: 20px; /* Giảm margin trên mobile */
+    margin-bottom: 20px; /* Giảm margin trên mobile */
+  }
+  
+  .view-all a {
+    display: inline-block;
+    background: #20B2AA;
+    color: #fff;
+    padding: 10px 24px; /* Giảm padding trên mobile */
+    border-radius: 25px;
+    transition: transform 0.3s ease;
+    text-decoration: none; /* Bỏ gạch chân */
+  }
+  
+  .view-all a:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (min-width: 768px) { /* iPad và lớn hơn */
+    .view-all {
+        margin-top: 30px; /* Tăng margin trên iPad và desktop */
+        margin-bottom: 30px; /* Tăng margin trên iPad và desktop */
+    }
+  
+    .view-all a {
+        padding: 12px 30px; /* Tăng padding trên iPad và desktop */
+    }
+  }
+  
+  /* Toast thông báo */
+  #toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
+  
+  .contain_three .toast {
+    background: #333;
+    color: #fff;
+    padding: 12px 16px; /* Giảm padding trên mobile */
+    margin-top: 8px; /* Giảm margin trên mobile */
+    border-radius: 8px;
+    opacity: 0;
+    animation: fadeInOut 3s forwards;
+  }
+  
+  @media (min-width: 768px) { /* iPad và lớn hơn */
+    .contain_three .toast {
+        padding: 15px 20px; /* Tăng padding trên iPad và desktop */
+        margin-top: 10px; /* Tăng margin trên iPad và desktop */
+    }
+  }
+  
+  @keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(20px); }
+  }

@@ -1,0 +1,145 @@
+/* Featured Categories Section */
+.featured-categories {
+    padding: 4rem 0;
+    background-color: #ffffff;
+}
+
+.second_container .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.second_container .heading {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.second_container .heading h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #20B2AA; /* Màu xanh đậm từ PlayHouse */
+    margin-bottom: 12px;
+}
+
+.second_container .heading p {
+    color: #6B7280; /* Màu xám nhạt */
+    max-width: 42rem;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* Grid danh mục */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 1 cột trên mobile */
+    gap: 1rem; /* Giảm khoảng cách trên mobile */
+    justify-items: center; /* Căn giữa trên mobile */
+}
+
+@media (min-width: 768px) and (max-width: 1024px) { /* iPad */
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cột trên iPad */
+        gap: 1.5rem; /* Tăng khoảng cách trên iPad */
+        justify-items: center; /* Căn giữa trên iPad */
+    }
+}
+
+@media (min-width: 1024px) { /* Laptop/Desktop */
+    .categories-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 cột trên desktop */
+        gap: 1.5rem; /* Giữ khoảng cách trên desktop */
+        justify-items: stretch; /* Căn đều trên desktop */
+    }
+}
+
+/* Category Card */
+.category-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    width: 100%; /* Đảm bảo card chiếm toàn bộ chiều rộng của cột */
+    max-width: 300px; /* Giới hạn chiều rộng tối đa để tránh mở rộng quá mức */
+}
+
+.category-card:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.category-link {
+    display: block;
+}
+
+.second_container .image-container {
+    height: 14rem; /* Giảm chiều cao trên mobile */
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Đảm bảo container chiếm toàn bộ chiều rộng */
+}
+
+@media (min-width: 768px) { /* iPad và lớn hơn */
+    .second_container .image-container {
+        height: 16rem; /* Tăng chiều cao trên iPad và desktop */
+    }
+}
+
+.second_container .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(30, 64, 175, 0.2); /* Lớp phủ xanh nhạt từ PlayHouse */
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.category-card:hover .overlay {
+    background-color: rgba(30, 64, 175, 0.1);
+}
+
+.category-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo hình ảnh chiếm toàn bộ kích thước container mà không bị méo */
+    transition: transform 0.5s ease;
+}
+
+.category-card:hover .category-image {
+    transform: scale(1.1);
+}
+
+.category-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(17, 24, 39, 0.8), transparent);
+    padding: 1.2rem; /* Giảm padding trên mobile */
+    z-index: 20;
+}
+
+@media (min-width: 768px) { /* iPad và lớn hơn */
+    .category-title {
+        padding: 1.5rem; /* Tăng padding trên iPad và desktop */
+    }
+}
+
+.category-title h3 {
+    color: #ffffff;
+    font-size: 1rem; /* Giảm font-size trên mobile */
+    font-weight: 600;
+    transition: transform 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@media (min-width: 768px) { /* iPad và lớn hơn */
+    .category-title h3 {
+        font-size: 1.25rem; /* Tăng font-size trên iPad và desktop */
+    }
+}
+
+.category-card:hover .category-title h3 {
+    transform: translateX(0.5rem);
+}

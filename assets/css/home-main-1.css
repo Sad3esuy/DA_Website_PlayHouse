@@ -1,0 +1,516 @@
+/* Keyframes cho hiệu ứng động */  
+@keyframes fade-in {  
+    from {  
+        opacity: 0;  
+    }  
+    to {  
+        opacity: 1;  
+    }  
+}  
+
+@keyframes slide-in-right {  
+    from {  
+        transform: translateX(100%);  
+    }  
+    to {  
+        transform: translateX(0);  
+    }  
+}  
+
+@keyframes float {  
+    0%, 100% {  
+        transform: translateY(0);  
+    }  
+    50% {  
+        transform: translateY(-10px);  
+    }  
+}  
+
+/* Section chính */  
+.hero-section {  
+    position: relative;  
+    background-color: #ffffff; /* Thay bg-gray-50 bằng white */  
+    overflow: hidden;  
+    width: 100%;  
+}  
+
+
+/* Container chính */  
+.hero-container {  
+    width: 100%; 
+    margin: 0;
+    padding: 0; /* Bỏ padding để chiếm hết màn hình */
+    padding-top: 2rem; /* Giảm padding trên mobile */
+    padding-bottom: 2rem; /* Giảm padding dưới mobile */
+    max-width: 100%; /* Đảm bảo container không giới hạn chiều rộng */
+}  
+
+@media (min-width: 768px) {  
+    .hero-container {  
+        padding-top: 4rem; /* Giảm padding trên iPad */
+        padding-bottom: 4rem; /* Giảm padding dưới iPad */
+    }  
+}  
+
+@media (min-width: 1024px) {  
+    .hero-container {  
+        padding-top: 6rem; /* Tăng padding trên desktop */
+        padding-bottom: 6rem; /* Tăng padding dưới desktop */
+    }  
+}  
+
+/* Lưới bố cục */  
+.hero-grid {  
+    display: grid;  
+    grid-template-columns: 1fr; /* 1 cột trên mobile */
+    gap: 1.5rem; /* Giảm khoảng cách trên mobile */
+    align-items: center;  
+    width: 100%;
+    padding-left: 0.5rem; /* Giảm padding bên trái trên mobile */
+    padding-right: 0.5rem; /* Giảm padding bên phải trên mobile */
+    max-width: 1800px; /* Giới hạn chiều rộng tối đa của nội dung */
+    margin: 0 auto; /* Căn giữa grid trong container */
+}  
+
+@media (min-width: 768px) {  
+    .hero-grid {  
+        grid-template-columns: 1fr; /* 1 cột trên iPad */
+        gap: 2rem; /* Tăng khoảng cách trên iPad */
+        padding-left: 1rem; /* Tăng padding bên trái trên iPad */
+        padding-right: 1rem; /* Tăng padding bên phải trên iPad */
+    }  
+}  
+
+@media (min-width: 1024px) {  
+    .hero-grid {  
+        grid-template-columns: 1fr 1fr; /* 2 cột trên desktop */
+        gap: 2rem; /* Tăng khoảng cách trên desktop */
+        padding-left: 1rem; /* Tăng padding bên trái trên desktop */
+        padding-right: 1rem; /* Tăng padding bên phải trên desktop */
+    }  
+}  
+
+/* Phần văn bản */  
+.hero-text {  
+    display: flex;  
+    flex-direction: column;  
+    gap: 0.8rem; /* Giảm khoảng cách trên mobile */
+    animation: fade-in 1s ease-in-out 0.2s forwards;  
+    width: 100%;  
+    text-align: center; /* Căn giữa trên mobile */
+}  
+
+@media (min-width: 768px) {  
+    .hero-text {  
+        gap: 1rem; /* Tăng khoảng cách trên iPad */
+        text-align: center; /* Căn giữa trên iPad */
+    }  
+}  
+
+@media (min-width: 1024px) {  
+    .hero-text {  
+        gap: 1rem; /* Tăng khoảng cách trên desktop */
+        text-align: left; /* Căn trái trên desktop */
+    }  
+}  
+
+/* Nhãn sản phẩm độc đáo */  
+.unique-product-label {  
+    display: inline-block;  
+    background-color: #007bff1a; /* Giữ màu xanh nhạt như hình */  
+    color: #20B2AA;  
+    padding: 0.4rem 1.2rem; /* Giảm padding trên mobile */
+    border-radius: 9999px;  
+    font-size: 0.75rem; /* Giảm font-size trên mobile */
+    font-weight: 500;  
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
+    margin-bottom: 0.3rem; /* Giảm margin trên mobile */
+    align-self: center; /* Căn giữa trên mobile */
+    order: -1;  
+}  
+
+@media (min-width: 768px) {  
+    .unique-product-label {  
+        padding: 0.5rem 1.5rem; /* Tăng padding trên iPad */
+        font-size: 0.875rem; /* Tăng font-size trên iPad */
+        margin-bottom: 0.5rem; /* Tăng margin trên iPad */
+        align-self: center; /* Căn giữa trên iPad */
+    }  
+}  
+
+@media (min-width: 1024px) {  
+    .unique-product-label {  
+        padding: 0.5rem 1.5rem; /* Giữ padding trên desktop */
+        font-size: 0.875rem; /* Giữ font-size trên desktop */
+        margin-bottom: 0.5rem; /* Giữ margin trên desktop */
+        align-self: flex-start; /* Căn trái trên desktop */
+    }  
+}  
+
+/* Tiêu đề chính */  
+.hero-heading {  
+    font-size: 1.8rem; /* Giảm kích thước trên mobile */
+    font-weight: bold;  
+    color: #111827; /* Màu xanh đậm cho phần "Khám phá thế giới đồ chơi tại" */  
+    line-height: 1.2; /* Giảm line-height trên mobile */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
+}  
+
+.hero-heading span {  
+    color: #20B2AA; /* Màu xanh dương cho "PlayHouse" */  
+}  
+
+@media (min-width: 768px) {  
+    .hero-heading {  
+        font-size: 2.5rem; /* Tăng kích thước trên iPad */
+        line-height: 1.2; /* Giữ line-height trên iPad */
+    }  
+}  
+
+@media (min-width: 1024px) {  
+    .hero-heading {  
+        font-size: 3rem; /* Tăng kích thước trên desktop */
+        line-height: 1.25; /* Tăng line-height trên desktop */
+    }  
+}  
+
+/* Đoạn văn */  
+.hero-paragraph {  
+    font-size: 1rem; /* Giảm kích thước trên mobile */
+    color: #4b5563; /* Màu xanh nhạt như hình */  
+    padding-left: 0; /* Loại bỏ padding để căn giữa */  
+    padding-right: 0;  
+    text-align: center; /* Căn giữa trên mobile */
+}  
+
+@media (min-width: 768px) {  
+    .hero-paragraph {  
+        font-size: 1.125rem; /* Tăng kích thước trên iPad */
+        text-align: center; /* Căn giữa trên iPad */
+    }  
+}  
+
+@media (min-width: 1024px) {  
+    .hero-paragraph {  
+        font-size: 1.125rem; /* Giữ kích thước trên desktop */
+        text-align: left; /* Căn trái trên desktop */
+    }  
+}  
+
+/* Phần nút */  
+.buttons {  
+    display: flex;  
+    flex-wrap: wrap;  
+    gap: 0.8rem; /* Giảm khoảng cách trên mobile */
+    width: 100%;  
+    justify-content: center; /* Căn giữa trên mobile */
+}  
+
+@media (min-width: 768px) {  
+    .buttons {  
+        gap: 1rem; /* Tăng khoảng cách trên iPad */
+        justify-content: center; /* Căn giữa trên iPad */
+    }  
+}  
+
+@media (min-width: 1024px) {  
+    .buttons {  
+        gap: 1rem; /* Tăng khoảng cách trên desktop */
+        justify-content: flex-start; /* Căn trái trên desktop */
+    }  
+}  
+
+/* Nút chính */  
+.primary-button {  
+    display: inline-flex;  
+    align-items: center;  
+    background-color: #20B2AA; /* Màu xanh dương như hình */  
+    color: white;  
+    padding: 0.6rem 1.2rem; /* Giảm padding trên mobile */
+    border-radius: 9999px;  
+    font-size: 0.9rem; /* Giảm font-size trên mobile */
+    font-weight: 500;  
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  
+    transition: transform 0.4s ease, background-color 0.4s ease;  
+    text-decoration: none;  
+}  
+
+.primary-button:hover {  
+    transform: scale(1.05);  
+    background-color: #26d6cd; /* Hiệu ứng đổi màu khi hover */  
+}  
+
+@media (min-width: 768px) {  
+    .primary-button {  
+        padding: 0.7rem 1.4rem; /* Tăng padding trên iPad */
+        font-size: 1rem; /* Tăng font-size trên iPad */
+    }  
+}  
+
+@media (min-width: 1024px) {  
+    .primary-button {  
+        padding: 0.75rem 1.5rem; /* Tăng padding trên desktop */
+        font-size: 1rem; /* Giữ font-size trên desktop */
+    }  
+}  
+
+/* Nút phụ */  
+.secondary-button {  
+    display: inline-flex;  
+    align-items: center;  
+    background-color: white;  
+    color: #20B2AA;  
+    border: 1px solid #d1d5db; /* Viền xám như hình */  
+    padding: 0.6rem 1.2rem; /* Giảm padding trên mobile */
+    border-radius: 9999px;  
+    font-size: 0.9rem; /* Giảm font-size trên mobile */
+    font-weight: 500;  
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
+    transition: background-color 0.4s ease, transform 0.4s ease;  
+    text-decoration: none;  
+}  
+
+.secondary-button:hover {  
+    background-color: #f9fafb;  
+    transform: scale(1.05);  
+}  
+
+@media (min-width: 768px) {  
+    .secondary-button {  
+        padding: 0.7rem 1.4rem; /* Tăng padding trên iPad */
+        font-size: 1rem; /* Tăng font-size trên iPad */
+    }  
+}  
+
+@media (min-width: 1024px) {  
+    .secondary-button {  
+        padding: 0.75rem 1.5rem; /* Tăng padding trên desktop */
+        font-size: 1rem; /* Giữ font-size trên desktop */
+    }  
+}  
+
+/* Phần hình ảnh */  
+.hero-image {  
+    position: relative;  
+    height: 300px; /* Giảm chiều cao trên mobile */
+    animation: slide-in-right 1s ease-in-out 0.5s forwards;  
+    width: 100%;  
+    justify-content: center; /* Căn giữa trên mobile */
+}  
+
+@media (min-width: 768px) {  
+    .hero-image {  
+        height: 400px; /* Tăng chiều cao trên iPad */
+        justify-content: center; /* Căn giữa trên iPad */
+    }  
+}  
+
+@media (min-width: 1024px) {  
+    .hero-image {  
+        height: 500px; /* Tăng chiều cao trên desktop */
+        justify-content: flex-end; /* Căn phải trên desktop */
+    }  
+}  
+
+/* Wrapper hình ảnh */  
+.image-wrapper {  
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 100%;  
+    display: flex;  
+    align-items: center;  
+    justify-content: center; /* Căn giữa trên mobile */
+}  
+
+@media (min-width: 768px) {  
+    .image-wrapper {  
+        justify-content: center; /* Căn giữa trên iPad */
+    }  
+}  
+
+@media (min-width: 1024px) {  
+    .image-wrapper {  
+        justify-content: flex-end; /* Căn phải trên desktop */
+    }  
+}  
+
+/* Container hình ảnh */  
+.image-container {  
+    position: relative;  
+    width: 100%; /* Mở rộng toàn bộ trên mobile */
+    height: 100%;  
+}  
+
+@media (min-width: 768px) {  
+    .image-container {  
+        width: 85%; /* Giới hạn chiều rộng trên iPad */
+        height: 85%;  
+    }  
+}  
+
+@media (min-width: 1024px) {  
+    .image-container {  
+        width: 85%; /* Giữ chiều rộng trên desktop */
+        height: 85%;  
+    }  
+}  
+
+/* Nền hình ảnh */  
+.image-background {  
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 100%;  
+    background: linear-gradient(to bottom right, #20b2ab39, #29dfd6); /* Gradient xanh nhạt như hình */  
+    border-radius: 1.5rem; /* Giữ góc bo tròn lớn */  
+    transform: rotate(3deg);  
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+}  
+
+/* Hình ảnh */  
+.image {  
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 100%;  
+    object-fit: cover;  
+    border-radius: 1.5rem; /* Giữ góc bo tròn lớn */  
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);  
+    transform: rotate(-3deg);  
+    transition: transform 0.4s ease;  
+}  
+
+.image:hover {  
+    transform: rotate(0);  
+}  
+
+/* Vòng tròn trang trí */  
+.decorative-circle-1 {  
+    position: absolute;  
+    bottom: -1rem; /* Di chuyển vòng tròn lên trên mobile */
+    left: -1rem; /* Di chuyển vòng tròn sang phải trên mobile */
+    width: 6rem; /* Giảm kích thước trên mobile */
+    height: 6rem;  
+    background-color: #facc15; /* Màu vàng như hình */  
+    border-radius: 50%;  
+    opacity: 0.6;  
+    animation: float 4s infinite;  
+    transition: transform 0.4s ease;  
+}  
+
+@media (min-width: 768px) {  
+    .decorative-circle-1 {  
+        bottom: -1rem; /* Vị trí trên iPad */
+        left: -1rem; /* Vị trí trên iPad */
+        width: 7rem; /* Tăng kích thước trên iPad */
+        height: 7rem;  
+    }  
+}  
+
+@media (min-width: 1024px) {  
+    .decorative-circle-1 {  
+        bottom: -1.5rem; /* Vị trí gốc trên desktop */
+        left: -2.5rem; /* Vị trí gốc trên desktop */
+        width: 8rem; /* Tăng kích thước trên desktop */
+        height: 8rem;  
+    }  
+}  
+
+.decorative-circle-1:hover {  
+    transform: scale(1.1);  
+}  
+
+.decorative-circle-2 {  
+    position: absolute;  
+    top: 1rem; /* Di chuyển vòng tròn xuống trên mobile */
+    right: -1rem; /* Di chuyển vòng tròn sang trái trên mobile */
+    width: 5rem; /* Giảm kích thước trên mobile */
+    height: 5rem;  
+    background-color: #007bff99; /* Màu xanh dương như hình */  
+    border-radius: 50%;  
+    opacity: 0.5;  
+    animation: float 4s infinite;  
+    animation-delay: 0.3s;  
+    transition: transform 0.4s ease;  
+}  
+
+@media (min-width: 768px) {  
+    .decorative-circle-2 {  
+        top: 1.5rem; /* Vị trí trên iPad */
+        right: -1rem; /* Vị trí trên iPad */
+        width: 6rem; /* Tăng kích thước trên iPad */
+        height: 6rem;  
+    }  
+}  
+
+@media (min-width: 1024px) {  
+    .decorative-circle-2 {  
+        top: 2.5rem; /* Vị trí gốc trên desktop */
+        right: -1.5rem; /* Vị trí gốc trên desktop */
+        width: 6rem; /* Tăng kích thước trên desktop */
+        height: 6rem;  
+    }  
+}  
+
+.decorative-circle-2:hover {  
+    transform: scale(1.1);  
+}  
+
+.decorative-circle-3 {  
+    position: absolute;  
+    top: 50%;  
+    right: 20%; /* Di chuyển vòng tròn để cân đối trên mobile */
+    width: 4rem; /* Giữ kích thước trên mobile */
+    height: 4rem;  
+    background-color: #9f7aea; /* Màu tím như hình */  
+    border-radius: 50%;  
+    opacity: 0.4;  
+    animation: float 4s infinite;  
+    animation-delay: 0.1s;  
+    transition: transform 0.4s ease;  
+}  
+
+@media (min-width: 768px) {  
+    .decorative-circle-3 {  
+        right: 25%; /* Cân đối trên iPad */
+    }  
+}  
+
+@media (min-width: 1024px) {  
+    .decorative-circle-3 {  
+        right: 33.333%; /* Vị trí gốc trên desktop */
+    }  
+}  
+
+.decorative-circle-3:hover {  
+    transform: scale(1.1);  
+}  
+
+/* Hiệu ứng mờ phía dưới */  
+.fade-bottom {  
+    position: absolute;  
+    bottom: -2rem; /* Giảm chiều cao trên mobile */
+    left: 0;  
+    right: 0;  
+    height: 6rem; /* Giảm chiều cao trên mobile */
+    background: linear-gradient(to top, white, transparent);  
+    width: 100%;  
+}  
+
+@media (min-width: 768px) {  
+    .fade-bottom {  
+        bottom: -3rem; /* Giảm chiều cao trên iPad */
+        height: 7rem; /* Tăng chiều cao trên iPad */
+    }  
+}  
+
+@media (min-width: 1024px) {  
+    .fade-bottom {  
+        bottom: -4rem; /* Vị trí gốc trên desktop */
+        height: 8rem; /* Tăng chiều cao trên desktop */
+    }  
+}

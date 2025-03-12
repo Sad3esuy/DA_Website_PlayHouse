@@ -1,0 +1,459 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+h1{
+    color: #20B2AA;
+}
+.contact-info h2{
+    color: #20B2AA;
+}
+.contact-form h2{
+    color: #20B2AA;
+}
+.map-section h2{
+    color: #20B2AA;
+}
+/* Container */
+.container_first {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+/* Contact Section */
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 60px 0;
+    background: #f9f9f9;
+    animation: fade-in 1s ease-in-out;
+    justify-items: center; /* Căn giữa các cột trên grid */
+}
+
+@media (min-width: 768px) and (max-width: 1024px) { /* iPad */
+    .contact-section {
+        grid-template-columns: 1fr 1fr;
+        padding: 50px;
+        justify-items: center; /* Căn giữa trên iPad */
+    }
+}
+
+@media (min-width: 1024px) { /* Laptop/Desktop */
+    .contact-section {
+        grid-template-columns: 1fr 1fr;
+        padding: 60px;
+        justify-items: center; /* Căn giữa trên desktop */
+    }
+}
+
+.contact-info, .contact-form {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Đảm bảo width chiếm toàn bộ cột grid */
+    max-width: 600px; /* Giới hạn chiều rộng tối đa */
+}
+
+/* .contact-info:hover, .contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+} */
+
+.contact-title {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #111827;
+    font-weight: 600;
+    text-align: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 12px;
+    transition: background 0.3s ease;
+}
+
+.contact-item:hover {
+    background: #e8e8e8;
+}
+
+.contact-icon {
+    background: #007bff10;
+    padding: 12px;
+    border-radius: 50%;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.contact-icon i {
+    font-size: 22px;
+    color: #20B2AA;
+}
+
+.contact-icon:hover {
+    background: #007bff20;
+}
+
+.contact-details {
+    flex: 1;
+}
+
+.contact-subtitle {
+    font-size: 20px;
+    color: #111827;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.contact-text {
+    color: #4b5563;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.contact-hours, .contact-social {
+    margin-top: 25px;
+}
+
+.contact-hours h3, .contact-social h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #111827;
+    font-weight: 500;
+}
+
+.contact-social .social-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center; /* Căn giữa các icon mạng xã hội */
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    background: #007bff10;
+    border-radius: 50%;
+    transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background: #20B2AA;
+    transform: scale(1.1);
+}
+
+.social-link i {
+    font-size: 22px;
+    color: #20B2AA;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover i {
+    color: #ffffff;
+}
+
+/* Contact Form */
+.contact-form {
+    animation: slide-in-right 1s ease-in-out;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 100;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: grid;
+    gap: 20px;
+}
+
+.form-col {
+    width: 100%;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #111827;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.form-label .required {
+    color: #e3342f;
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #d1d5db;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px #007bff30;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 150px;
+    line-height: 1.6;
+}
+
+.submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 14px;
+    background: #1fcdc4;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+    background: #00dacf;
+    transform: scale(1.05);
+}
+
+.submit-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.send-icon {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Map Section */
+.map-section {
+    padding: 60px 0;
+    background: #f9f9f9;
+    animation: fade-in 1s ease-in-out 0.2s;
+    text-align: center; /* Căn giữa tiêu đề bản đồ */
+}
+
+.map-title {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #111827;
+    font-weight: 600;
+}
+
+.map-container {
+    background: #e5e7eb;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin: none;
+    transition: transform 0.3s ease;
+    width: 100%; /* Đảm bảo bản đồ chiếm toàn bộ chiều rộng container */
+}
+
+.map-container:hover {
+    transform: translateY(-5px);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) { /* Mobile */
+    .contact-section {
+        grid-template-columns: 1fr;
+        padding: 30px 10px;
+        gap: 20px;
+    }
+
+    .contact-info, .contact-form {
+        padding: 25px;
+        max-width: 100%;
+    }
+
+    .contact-title {
+        font-size: 24px;
+    }
+
+    .contact-item {
+        padding: 12px;
+        margin-bottom: 20px;
+    }
+
+    .contact-icon {
+        padding: 10px;
+    }
+
+    .contact-icon i {
+        font-size: 20px;
+    }
+
+    .contact-subtitle {
+        font-size: 18px;
+    }
+
+    .contact-text {
+        font-size: 14px;
+    }
+
+    .contact-hours h3, .contact-social h3 {
+        font-size: 20px;
+    }
+
+    .social-link {
+        width: 35px;
+        height: 35px;
+        padding: 8px;
+    }
+
+    .social-link i {
+        font-size: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-label {
+        font-size: 14px;
+    }
+
+    .form-input, .form-textarea {
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+
+    .form-textarea {
+        min-height: 120px;
+    }
+
+    .submit-button {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .send-icon {
+        font-size: 16px;
+    }
+
+    .map-section {
+        padding: 30px 10px;
+    }
+
+    .map-title {
+        font-size: 24px;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) { /* iPad */
+    .contact-section {
+        grid-template-columns: 1fr 1fr;
+        padding: 40px 20px;
+        gap: 25px;
+    }
+
+    .contact-info, .contact-form {
+        padding: 30px;
+        max-width: 550px;
+    }
+
+    .contact-title {
+        font-size: 26px;
+    }
+
+    .contact-subtitle {
+        font-size: 19px;
+    }
+
+    .contact-text {
+        font-size: 15px;
+    }
+
+    .contact-hours h3, .contact-social h3 {
+        font-size: 21px;
+    }
+
+    .form-label {
+        font-size: 15px;
+    }
+
+    .form-input, .form-textarea {
+        padding: 11px;
+        font-size: 15px;
+    }
+
+    .submit-button {
+        padding: 13px;
+        font-size: 17px;
+    }
+
+    .map-section {
+        padding: 40px 20px;
+    }
+
+    .map-title {
+        font-size: 26px;
+    }
+
+    .map-container {
+        height: 350px;
+    }
+}
+
+@media (min-width: 1024px) { /* Laptop/Desktop */
+    .contact-section {
+        grid-template-columns: 1fr 1fr;
+        padding: 60px 20px;
+        gap: 30px;
+    }
+
+    .contact-info, .contact-form {
+        padding: 35px;
+        max-width: 600px;
+    }
+
+    .map-container {
+        height: 400px;
+    }
+}
