@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="stylesheet" href="../assets/css/search.css">
     <link rel="stylesheet" href="../assets/css/login.css">
-    <link rel="stylesheet" href="../assets/css/home-main-1.css">
-    <link rel="stylesheet" href="../assets/css/home-main-2.css">
-    <link rel="stylesheet" href="../assets/css/home-main-3.css">
+    <link rel="stylesheet" href="../assets/css/colections.css">
 </head>
 
 <body>
@@ -269,136 +267,134 @@
             </div>
         </div>
     </div>
+    <div class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="/">Trang chủ</a></li>
+                <li><a href="/danh-muc">Danh mục</a></li>
+                <li>Tất cả sản phẩm</li>
+            </ul>
+        </div>
+    </div>
     <main>
         <div class="container">
-            <!-- Your main content here -->
-            <div class="header_container">
-                <section class="hero-section relative bg-white overflow-hidden">
-                    <div class="hero-container mx-auto px-4 py-16 md:py-24">
-                        <div class="hero-grid grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                            <div class="hero-text space-y-4 animate-fade-in text-center md:text-left">
-                                <!-- Thêm text-center cho mobile, md:text-left cho desktop -->
-                                <span class="unique-product-label">Sản phẩm độc đáo</span>
-                                <h1 class="hero-heading">Khám phá thế giới đồ chơi tại <span
-                                        class="text-primary"></span>💕</h1>
-                                <p class="hero-paragraph">Kết nối niềm vui và sáng tạo với bộ sưu tập đồ chơi, mô hình
-                                    và
-                                    gấu bông độc đáo, chất lượng cao chỉ có tại PlayHouse.</p>
-                                <div class="buttons flex flex-wrap gap-4 justify-center md:justify-start">
-                                    <!-- Căn giữa trên mobile, căn trái trên desktop -->
-                                    <a href="/products" class="primary-button">Khám phá ngay <span
-                                            class="ml-2">→</span></a>
-                                    <a href="/categories" class="secondary-button">Danh mục sản phẩm</a>
-                                </div>
-                            </div>
-                            <div class="hero-image relative animate-slide-in-right h-[400px] sm:h-[450px] md:h-[500px]">
-                                <div class="image-wrapper absolute w-full h-full flex items-center justify-center">
-                                    <div class="image-container relative w-[85%] h-[85%]">
-                                        <div
-                                            class="image-background absolute inset-0 bg-gradient-to-br from-primary/20 to-indigo-100 rounded-3xl transform rotate-3">
-                                        </div>
-                                        <img src="../assets/images/banner.png" alt="Toys Collection"
-                                            class="image absolute inset-0 w-full h-full object-cover rounded-3xl shadow-xl transform -rotate-3 transition-transform hover:rotate-0 duration-300">
-                                    </div>
-                                </div>
-                                <div
-                                    class="decorative-circle-1 absolute -bottom-6 -left-6 md:-left-10 w-32 h-32 bg-yellow-400 rounded-full opacity-60 animate-float">
-                                </div>
-                                <div
-                                    class="decorative-circle-2 absolute top-10 -right-6 md:-right-10 w-24 h-24 bg-primary/60 rounded-full opacity-50 animate-float delay-300">
-                                </div>
-                                <div
-                                    class="decorative-circle-3 absolute top-1/2 right-1/3 w-16 h-16 bg-purple-400 rounded-full opacity-40 animate-float delay-100">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="fade-bottom absolute -bottom-16 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent">
-                    </div>
-                </section>
+            <div class="page-header">
+                <h1 class="page-title">Tất cả sản phẩm</h1>
+                <div class="sorting">
+                    <label for="sort-select">Sắp xếp:</label>
+                    <select id="sort-select">
+                        <option>Tên A → Z</option>
+                        <option>Tên Z → A</option>
+                        <option>Giá thấp đến cao</option>
+                        <option>Giá cao đến thấp</option>
+                        <option>Mới nhất</option>
+                    </select>
+                </div>
             </div>
-            <div class="second_container">
-                <section class="featured-categories">
-                    <div class="container">
-                        <div class="heading">
-                            <h2>Danh mục nổi bật</h2>
-                            <p>Khám phá các danh mục sản phẩm đa dạng của chúng tôi - từ mô hình tinh tế đến những chú gấu bông đáng yêu</p>
+            <!-- Toast container (nếu cần hiển thị thông báo) -->
+            <div id="toast-container"></div>
+
+            <div class="contain-colections">
+                <!-- Cột bên trái (15%) - có thể là menu hoặc danh mục -->
+                <aside>
+                    <!-- Nội dung sidebar (tùy ý) -->
+                    <p>Danh mục sản phẩm</p>
+                    <div class="category-row">
+                        <div class="col">
+                            <input type="radio" id="all" name="danh-muc-sanpham" value="list-all">
+                            <label for="all">Tất cả</label>
                         </div>
-
-                        <div class="categories-grid">
-                            <!-- Category 1 -->
-                            <div class="category-card">
-                                <a href="/products/mo-hinh" class="category-link">
-                                    <div class="image-container">
-                                        <div class="overlay"></div>
-                                        <img src="../assets/images/danhmuc/danhmuc-mohinh.jpg" alt="Mô hình" class="category-image" />
-                                    </div>
-                                    <div class="category-title">
-                                        <h3>Mô Hình</h3>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Category 2 -->
-                            <div class="category-card">
-                                <a href="/products/gau-bong" class="category-link">
-                                    <div class="image-container">
-                                        <div class="overlay"></div>
-                                        <img src="../assets/images/danhmuc/danhmuc-gaubong.jpg" alt="Gấu bông" class="category-image" />
-                                    </div>
-                                    <div class="category-title">
-                                        <h3>BabyThree</h3>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Category 3 -->
-                            <div class="category-card">
-                                <a href="/products/lego" class="category-link">
-                                    <div class="image-container">
-                                        <div class="overlay"></div>
-                                        <img src="../assets/images/danhmuc/danhmuc-leggo.jpg" alt="LEGO" class="category-image" />
-                                    </div>
-                                    <div class="category-title">
-                                        <h3>Lego</h3>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- Category 4 -->
-                            <div class="category-card">
-                                <a href="/products/origami" class="category-link">
-                                    <div class="image-container">
-                                        <div class="overlay"></div>
-                                        <img src="../assets/images/danhmuc/danhmuc-labubu.jpg" alt="Origami" class="category-image" />
-                                    </div>
-                                    <div class="category-title">
-                                        <h3>Labubu</h3>
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="col">
+                            <input type="radio" id="labubu" name="danh-muc-sanpham" value="list-labubu">
+                            <label for="labubu">Labubu</label>
+                        </div>
+                        <div class="col">
+                            <input type="radio" id="babythree" name="danh-muc-sanpham" value="list-babythree">
+                            <label for="babythree">BabyThree</label>
+                        </div>
+                        <div class="col">
+                            <input type="radio" id="lego" name="danh-muc-sanpham" value="list-lego">
+                            <label for="lego">Lego</label>
+                        </div>
+                        <div class="col">
+                            <input type="radio" id="mohinh" name="danh-muc-sanpham" value="list-mohinh">
+                            <label for="mohinh">Mô hình</label>
                         </div>
                     </div>
-                </section>
-            </div>
-            <div class="contain_three">
+                    <!-- ... -->
+                </aside>
+
+                <!-- Cột bên phải (85%) - khu vực hiển thị danh sách sản phẩm -->
+                <!-- <div>
+                    <div class="products-grid"> -->
+                <!-- Bắt đầu 1 sản phẩm -->
+                <!-- <div class="product-card">
+                            <div class="image-container"> -->
+                <!-- Badge "BÁN CHẠY" -->
+                <!-- <span class="badges" style="background-color: #20B2AA;">Bán chạy</span> -->
+                <!-- Ảnh sản phẩm -->
+                <!-- <img src="../sanpham-babythree-1.jpg"
+                                    alt="LABUBU Limited Edition Merlion Plush Series" /> -->
+                <!-- Nút overlay hiển thị khi hover -->
+                <!-- <div class="overlay-buttons"> -->
+                <!-- Nút giỏ hàng -->
+                <!-- <button aria-label="Thêm vào giỏ hàng"> -->
+                <!-- Icon giỏ hàng (cart) dạng SVG đơn giản -->
+                <!-- <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="9" cy="21" r="1"></circle>
+                                            <circle cx="20" cy="21" r="1"></circle>
+                                            <path
+                                                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61l1.38-7.39H6">
+                                            </path>
+                                        </svg>
+                                    </button> -->
+                <!-- Nút yêu thích (heart) -->
+                <!-- <button aria-label="Yêu thích">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M20.84 4.61c-1.54-1.42-3.95-1.61-5.66-.39L12 6.09l-3.18-1.87C7.11 3.92 4.7 4.09 3.16 5.52c-2.18 2.02-2.26 5.39-.18 7.56l7.27 7.28c.39.39 1.02.39 1.41 0l7.27-7.28c2.08-2.17 2-5.54-.18-7.56z">
+                                            </path>
+                                        </svg>
+                                    </button> -->
+                <!-- Nút xem chi tiết (eye) -->
+                <!-- <button aria-label="Xem chi tiết">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M1 12s4.5-7 11-7 11 7 11 7-4.5 7-11 7-11-7-11-7z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div> -->
+                <!-- Thông tin sản phẩm -->
+                <!-- <div class="product-info">
+                                <h3>LABUBU Limited Edition Merlion Plush Series</h3>
+                                <div>
+                                    <span class="price">499.000 đ</span>
+                                    <span class="original-price">599.000 đ</span>
+                                </div>
+                            </div>
+                        </div> -->
+                <!-- Kết thúc 1 sản phẩm -->
+
+
                 <section class="featured-products">
                     <div class="container">
-                        <div class="section-header">
-                            <h2>Sản phẩm nổi bật</h2>
-                            <p>Khám phá bộ sưu tập đồ chơi, mô hình và gấu bông độc đáo, chất lượng cao từ PlayHouse</p>
-                        </div>
                         <div class="products-grid" id="productsGrid">
                             <!-- Các thẻ sản phẩm sẽ được tạo bằng JS -->
                         </div>
-                        <div class="view-all">
-                            <a href="colections.html">Xem tất cả sản phẩm</a>
-                        </div>
+                    </div>
+                    <div class="pagination">
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <!-- ... -->
                     </div>
                 </section>
+                <!-- Phân trang (nếu cần) -->
             </div>
-            <div class="toast_container"></div>
         </div>
     </main>
     <!-- Mobile Bottom Navigation -->
@@ -426,9 +422,8 @@
             </a>
         </div>
     </div>
-
     <footer>
-        <div class="container footer-content">
+        <div class="footer-content container">
             <div class="footer-section">
                 <h3>Về Chúng Tôi</h3>
                 <ul>
@@ -457,16 +452,15 @@
                 <p>Email: support@example.com</p>
             </div>
         </div>
-        <div class="container footer-bottom">
+        <div class="footer-bottom container">
             <p>© 2025 Shop Phụ Kiện, Gấu Bông, Mô Hình. All rights reserved.</p>
         </div>
-        <script src="../assets/js/search.js"></script>
-        <script src="../assets/js/login.js"></script>
-        <script src="../assets/js/main.js"></script>
-        <script src="../assets/js/home-main-1.js"></script>
-        <script src="../assets/js/home-main-2.js"></script>
-        <script src="../assets/js/home-main-3.js"></script>
     </footer>
+    <script src="../assets/js/search.js"></script>
+    <script src="../assets/js/login.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/colections.js"></script>
+    <script src="../assets/js/category-colections.js"></script>
 </body>
 
 </html>
