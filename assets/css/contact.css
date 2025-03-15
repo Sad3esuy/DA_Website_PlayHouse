@@ -17,7 +17,7 @@ h1{
     color: #20B2AA;
 }
 /* Container */
-.container_first {
+.contact-container_first {
     max-width: 1200px;
     margin: 0 auto;
     padding: 30px 20px;
@@ -31,7 +31,6 @@ h1{
     gap: 30px;
     padding: 60px 0;
     background: #f9f9f9;
-    animation: fade-in 1s ease-in-out;
     justify-items: center; /* Căn giữa các cột trên grid */
 }
 
@@ -84,9 +83,6 @@ h1{
     transition: background 0.3s ease;
 }
 
-.contact-item:hover {
-    background: #e8e8e8;
-}
 
 .contact-icon {
     background: #007bff10;
@@ -104,9 +100,6 @@ h1{
     color: #20B2AA;
 }
 
-.contact-icon:hover {
-    background: #007bff20;
-}
 
 .contact-details {
     flex: 1;
@@ -170,32 +163,27 @@ h1{
     color: #ffffff;
 }
 
-/* Contact Form */
-.contact-form {
-    animation: slide-in-right 1s ease-in-out;
-}
-
-.form-container {
+.contact-form-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
     z-index: 100;
 }
 
-.form-group {
+.contact-form-group {
     margin-bottom: 20px;
 }
 
-.form-row {
+.contact-form-row {
     display: grid;
     gap: 20px;
 }
 
-.form-col {
+.contact-form-col {
     width: 100%;
 }
 
-.form-label {
+.contact-form-label {
     display: block;
     margin-bottom: 8px;
     color: #111827;
@@ -203,11 +191,19 @@ h1{
     font-weight: 500;
 }
 
-.form-label .required {
+.contact-form-label .required {
     color: #e3342f;
 }
 
-.form-input, .form-textarea {
+.contact-form-input{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-form-textarea {
     width: 100%;
     padding: 12px;
     border: 2px solid #d1d5db;
@@ -216,19 +212,19 @@ h1{
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.form-input:focus, .form-textarea:focus {
+.contact-form-input:focus, .contact-form-textarea:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 3px #007bff30;
+    border-color: #18e9df;
+    box-shadow: 0 0 0 3px #10948e77;
 }
 
-.form-textarea {
+.contact-form-textarea {
     resize: vertical;
     min-height: 150px;
     line-height: 1.6;
 }
 
-.submit-button {
+.contact-submit-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -244,17 +240,17 @@ h1{
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.submit-button:hover {
+.contact-submit-button:hover {
     background: #00dacf;
     transform: scale(1.05);
 }
 
-.submit-button:disabled {
+.contact-submit-button:disabled {
     opacity: 0.7;
     cursor: not-allowed;
 }
 
-.send-icon {
+.contact-send-icon {
     margin-right: 10px;
     font-size: 18px;
 }
@@ -346,30 +342,35 @@ h1{
         font-size: 20px;
     }
 
-    .form-group {
+    .contact-form-group {
         margin-bottom: 15px;
     }
 
-    .form-label {
+    .contact-form-label {
         font-size: 14px;
     }
 
-    .form-input, .form-textarea {
+    .contact-form-input {
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 4px;
+    }
+    .contact-form-textarea {
         padding: 10px;
         font-size: 14px;
         border-radius: 10px;
     }
 
-    .form-textarea {
+    .contact-form-textarea {
         min-height: 120px;
     }
 
-    .submit-button {
+    .contact-submit-button {
         padding: 12px;
         font-size: 16px;
     }
 
-    .send-icon {
+    .contact-send-icon {
         font-size: 16px;
     }
 
@@ -414,16 +415,16 @@ h1{
         font-size: 21px;
     }
 
-    .form-label {
+    .contact-form-label {
         font-size: 15px;
     }
 
-    .form-input, .form-textarea {
+    .contact-form-input, .contact-form-textarea {
         padding: 11px;
         font-size: 15px;
     }
 
-    .submit-button {
+    .contact-submit-button {
         padding: 13px;
         font-size: 17px;
     }

@@ -1,4 +1,5 @@
 /* Keyframes cho hiệu ứng động */  
+
 @keyframes fade-in {  
     from {  
         opacity: 0;  
@@ -27,7 +28,7 @@
 }  
 
 /* Section chính */  
-.hero-section {  
+.home-hero-section {  
     position: relative;  
     background-color: #ffffff; /* Thay bg-gray-50 bằng white */  
     overflow: hidden;  
@@ -36,7 +37,7 @@
 
 
 /* Container chính */  
-.hero-container {  
+.home-hero-container {  
     width: 100%; 
     margin: 0;
     padding: 0; /* Bỏ padding để chiếm hết màn hình */
@@ -46,21 +47,21 @@
 }  
 
 @media (min-width: 768px) {  
-    .hero-container {  
+    .home-hero-container {  
         padding-top: 4rem; /* Giảm padding trên iPad */
         padding-bottom: 4rem; /* Giảm padding dưới iPad */
     }  
 }  
 
 @media (min-width: 1024px) {  
-    .hero-container {  
+    .home-hero-container {  
         padding-top: 6rem; /* Tăng padding trên desktop */
         padding-bottom: 6rem; /* Tăng padding dưới desktop */
     }  
 }  
 
 /* Lưới bố cục */  
-.hero-grid {  
+.home-hero-grid {  
     display: grid;  
     grid-template-columns: 1fr; /* 1 cột trên mobile */
     gap: 1.5rem; /* Giảm khoảng cách trên mobile */
@@ -73,7 +74,7 @@
 }  
 
 @media (min-width: 768px) {  
-    .hero-grid {  
+    .home-hero-grid {  
         grid-template-columns: 1fr; /* 1 cột trên iPad */
         gap: 2rem; /* Tăng khoảng cách trên iPad */
         padding-left: 1rem; /* Tăng padding bên trái trên iPad */
@@ -82,7 +83,7 @@
 }  
 
 @media (min-width: 1024px) {  
-    .hero-grid {  
+    .home-hero-grid {  
         grid-template-columns: 1fr 1fr; /* 2 cột trên desktop */
         gap: 2rem; /* Tăng khoảng cách trên desktop */
         padding-left: 1rem; /* Tăng padding bên trái trên desktop */
@@ -91,7 +92,7 @@
 }  
 
 /* Phần văn bản */  
-.hero-text {  
+.home-hero-text {  
     display: flex;  
     flex-direction: column;  
     gap: 0.8rem; /* Giảm khoảng cách trên mobile */
@@ -101,14 +102,14 @@
 }  
 
 @media (min-width: 768px) {  
-    .hero-text {  
+    .home-hero-text {  
         gap: 1rem; /* Tăng khoảng cách trên iPad */
         text-align: center; /* Căn giữa trên iPad */
     }  
 }  
 
 @media (min-width: 1024px) {  
-    .hero-text {  
+    .home-hero-text {  
         gap: 1rem; /* Tăng khoảng cách trên desktop */
         text-align: left; /* Căn trái trên desktop */
     }  
@@ -148,7 +149,7 @@
 }  
 
 /* Tiêu đề chính */  
-.hero-heading {  
+.home-hero-heading {  
     font-size: 1.8rem; /* Giảm kích thước trên mobile */
     font-weight: bold;  
     color: #111827; /* Màu xanh đậm cho phần "Khám phá thế giới đồ chơi tại" */  
@@ -156,26 +157,26 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
 }  
 
-.hero-heading span {  
+.home-hero-heading span {  
     color: #20B2AA; /* Màu xanh dương cho "PlayHouse" */  
 }  
 
 @media (min-width: 768px) {  
-    .hero-heading {  
+    .home-hero-heading {  
         font-size: 2.5rem; /* Tăng kích thước trên iPad */
         line-height: 1.2; /* Giữ line-height trên iPad */
     }  
 }  
 
 @media (min-width: 1024px) {  
-    .hero-heading {  
+    .home-hero-heading {  
         font-size: 3rem; /* Tăng kích thước trên desktop */
         line-height: 1.25; /* Tăng line-height trên desktop */
     }  
 }  
 
 /* Đoạn văn */  
-.hero-paragraph {  
+.home-hero-paragraph {  
     font-size: 1rem; /* Giảm kích thước trên mobile */
     color: #4b5563; /* Màu xanh nhạt như hình */  
     padding-left: 0; /* Loại bỏ padding để căn giữa */  
@@ -184,14 +185,14 @@
 }  
 
 @media (min-width: 768px) {  
-    .hero-paragraph {  
+    .home-hero-paragraph {  
         font-size: 1.125rem; /* Tăng kích thước trên iPad */
         text-align: center; /* Căn giữa trên iPad */
     }  
 }  
 
 @media (min-width: 1024px) {  
-    .hero-paragraph {  
+    .home-hero-paragraph {  
         font-size: 1.125rem; /* Giữ kích thước trên desktop */
         text-align: left; /* Căn trái trên desktop */
     }  
@@ -290,7 +291,7 @@
 }  
 
 /* Phần hình ảnh */  
-.hero-image {  
+.home-hero-image {  
     position: relative;  
     height: 300px; /* Giảm chiều cao trên mobile */
     animation: slide-in-right 1s ease-in-out 0.5s forwards;  
@@ -299,14 +300,14 @@
 }  
 
 @media (min-width: 768px) {  
-    .hero-image {  
+    .home-hero-image {  
         height: 400px; /* Tăng chiều cao trên iPad */
         justify-content: center; /* Căn giữa trên iPad */
     }  
 }  
 
 @media (min-width: 1024px) {  
-    .hero-image {  
+    .home-hero-image {  
         height: 500px; /* Tăng chiều cao trên desktop */
         justify-content: flex-end; /* Căn phải trên desktop */
     }  
