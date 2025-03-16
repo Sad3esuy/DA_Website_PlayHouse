@@ -247,6 +247,7 @@ h1{
     font-size: 18px;
     font-weight: 600;
     transition: background 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
 }
 
 .pay-submit-button:hover {
@@ -294,6 +295,12 @@ h1{
 .item-price {
     font-size: 14px;
     font-weight: bold;
+}
+.total-temp-row{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 14px;
 }
 .shipping-row, .coupon-row {
     display: flex;

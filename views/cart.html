@@ -281,130 +281,86 @@
         <div class="container">
             <ul>
                 <li><a href="index.html">Trang chủ</a></li>
-                <li><a href="/danh-muc">Danh mục</a></li>
-                <li>Tất cả sản phẩm</li>
+                <li>Giỏ hàng</li>
+                <li></li>
             </ul>
         </div>
     </div>
     <main>
         <div class="container">
-            <div class="page-header">
-                <h1 class="page-title">Tất cả sản phẩm</h1>
-                <div class="sorting">
-                    <label for="sort-select">Sắp xếp:</label>
-                    <select id="sort-select">
-                        <option>Tên A → Z</option>
-                        <option>Tên Z → A</option>
-                        <option>Giá thấp đến cao</option>
-                        <option>Giá cao đến thấp</option>
-                        <option>Mới nhất</option>
-                    </select>
-                </div>
-            </div>
-            <!-- Toast container (nếu cần hiển thị thông báo) -->
-            <div id="toast-container"></div>
-
-            <div class="contain-colections">
-                <!-- Cột bên trái (15%) - có thể là menu hoặc danh mục -->
-                <aside>
-                    <!-- Nội dung sidebar (tùy ý) -->
-                    <p>Danh mục sản phẩm</p>
-                    <div class="category-row">
-                        <div class="col">
-                            <input type="radio" id="all" name="danh-muc-sanpham" value="list-all">
-                            <label for="all">Tất cả</label>
+            <form action="">
+                <div class="cart-page-main">
+                    <div class="cart-header-tilte">
+                        <div class="cart-page-back-to-section">
+                            <a href="colections.html" class="cart-page-cancel-button"><i class="material-icons">arrow_back_ios_new</i>
+                                <strong>Tiếp tục mua sắm</strong></a>
                         </div>
-                        <div class="col">
-                            <input type="radio" id="labubu" name="danh-muc-sanpham" value="list-labubu">
-                            <label for="labubu">Labubu</label>
-                        </div>
-                        <div class="col">
-                            <input type="radio" id="babythree" name="danh-muc-sanpham" value="list-babythree">
-                            <label for="babythree">BabyThree</label>
-                        </div>
-                        <div class="col">
-                            <input type="radio" id="lego" name="danh-muc-sanpham" value="list-lego">
-                            <label for="lego">Lego</label>
-                        </div>
-                        <div class="col">
-                            <input type="radio" id="mohinh" name="danh-muc-sanpham" value="list-mohinh">
-                            <label for="mohinh">Mô hình</label>
+                        <div class="cart-page-tilte">
+                            <h1>Giỏ hàng của tôi</h1>
                         </div>
                     </div>
-                    <!-- ... -->
-                </aside>
-
-                <!-- Cột bên phải (85%) - khu vực hiển thị danh sách sản phẩm -->
-                <!-- <div>
-                    <div class="products-grid"> -->
-                <!-- Bắt đầu 1 sản phẩm -->
-                <!-- <div class="product-card">
-                            <div class="image-container"> -->
-                <!-- Badge "BÁN CHẠY" -->
-                <!-- <span class="badges" style="background-color: #20B2AA;">Bán chạy</span> -->
-                <!-- Ảnh sản phẩm -->
-                <!-- <img src="../sanpham-babythree-1.jpg"
-                                    alt="LABUBU Limited Edition Merlion Plush Series" /> -->
-                <!-- Nút overlay hiển thị khi hover -->
-                <!-- <div class="overlay-buttons"> -->
-                <!-- Nút giỏ hàng -->
-                <!-- <button aria-label="Thêm vào giỏ hàng"> -->
-                <!-- Icon giỏ hàng (cart) dạng SVG đơn giản -->
-                <!-- <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <circle cx="9" cy="21" r="1"></circle>
-                                            <circle cx="20" cy="21" r="1"></circle>
-                                            <path
-                                                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61l1.38-7.39H6">
-                                            </path>
-                                        </svg>
-                                    </button> -->
-                <!-- Nút yêu thích (heart) -->
-                <!-- <button aria-label="Yêu thích">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <path
-                                                d="M20.84 4.61c-1.54-1.42-3.95-1.61-5.66-.39L12 6.09l-3.18-1.87C7.11 3.92 4.7 4.09 3.16 5.52c-2.18 2.02-2.26 5.39-.18 7.56l7.27 7.28c.39.39 1.02.39 1.41 0l7.27-7.28c2.08-2.17 2-5.54-.18-7.56z">
-                                            </path>
-                                        </svg>
-                                    </button> -->
-                <!-- Nút xem chi tiết (eye) -->
-                <!-- <button aria-label="Xem chi tiết">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M1 12s4.5-7 11-7 11 7 11 7-4.5 7-11 7-11-7-11-7z"></path>
-                                            <circle cx="12" cy="12" r="3"></circle>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div> -->
-                <!-- Thông tin sản phẩm -->
-                <!-- <div class="product-info">
-                                <h3>LABUBU Limited Edition Merlion Plush Series</h3>
-                                <div>
-                                    <span class="price">499.000 đ</span>
-                                    <span class="original-price">599.000 đ</span>
-                                </div>
+                    <!-- Phần Giỏ hàng -->
+                    <div class="cart-page-container">
+                        <div class="cart-page-table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Hình ảnh</th>
+                                        <th>Sản phẩm</th>
+                                        <th>Giá</th>
+                                        <th>Số lượng</th>
+                                        <th>Hành động</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="cart-page-product-info">
+                                            <div class="cart-page-product-image">
+                                                <img src="../assets/images/sanpham/labubu/sanpham-labubu-1.jpg" alt="Mô hình Labubu">
+                                            </div>
+                                        </td>
+                                        <td class="cart-page-product-details">
+                                            <div class="cart-page-product-details">
+                                                <h3>Labubu Mokoko Fairy Tail - Mokoko V5 - Size 18cm</h3>
+                                            </div>
+                                        </td>
+                                        <td class="cart-page-product-price">999.000đ</td>
+                                        <td class="cart-page-product-quantity">
+                                            <div class="cart-quantity-control">
+                                                <button class="cart-decrease">−</button>
+                                                <input type="text" value="1" class="cart-quantity">
+                                                <button class="cart-increase">+</button>
+                                            </div>
+                                        </td>
+                                        <td class="cart-page-product-btn">
+                                            <div class="btn-cart-page">
+                                                <a class="cart-page-update-btn" href="#"><i class="material-icons">autorenew</i></a>
+                                                <a class="cart-page-delete-btn" href="#"><i class="material-icons">delete</i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="cart-page-order-summary">
+                            <h2>Tổng đơn hàng</h2>
+                            <div class="summary-row">
+                                <span>Tạm tính</span>
+                                <span>999.000đ</span>
                             </div>
-                        </div> -->
-                <!-- Kết thúc 1 sản phẩm -->
-
-
-                <section class="featured-products">
-                    <div class="container">
-                        <div class="products-grid" id="productsGrid">
-                            <!-- Các thẻ sản phẩm sẽ được tạo bằng JS -->
+                            <div class="summary-row">
+                                <span>Phí vận chuyển</span>
+                                <span>30.000đ</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Tổng cộng</span>
+                                <span class="cart-page-price-total">1029.000đ</span>
+                            </div>
+                            <a href="pay.html" class="cart-page-checkout-btn">Thanh toán</a>
                         </div>
                     </div>
-                    <div class="pagination">
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <!-- ... -->
-                    </div>
-                </section>
-                <!-- Phân trang (nếu cần) -->
-            </div>
+                </div>
+            </form>
         </div>
     </main>
     <!-- Mobile Bottom Navigation -->
@@ -432,8 +388,9 @@
             </a>
         </div>
     </div>
+
     <footer>
-        <div class="footer-content container">
+        <div class="container footer-content">
             <div class="footer-section">
                 <h3>Về Chúng Tôi</h3>
                 <ul>
@@ -462,20 +419,20 @@
                 <p>Email: support@example.com</p>
             </div>
         </div>
-        <div class="footer-bottom container">
+        <div class="container footer-bottom">
             <p>© 2025 Shop Phụ Kiện, Gấu Bông, Mô Hình. All rights reserved.</p>
         </div>
+        <script src="../assets/js/search.js"></script>
+        <script src="../assets/js/login.js"></script>
+        <script src="../assets/js/main.js"></script>
+        <script src="../assets/js/home-main-1.js"></script>
+        <script src="../assets/js/home-main-2.js"></script>
+        <script src="../assets/js/colections.js"></script>
+        <script src="../assets/js/category-colections.js"></script>
+        <script src="../assets/js/cart.js"></script>
+        <script src="../assets/js/product-details.js"></script>
+        <script src="../assets/js/check-order.js"></script>
     </footer>
-    <script src="../assets/js/search.js"></script>
-    <script src="../assets/js/login.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/home-main-1.js"></script>
-    <script src="../assets/js/home-main-2.js"></script>
-    <script src="../assets/js/colections.js"></script>
-    <script src="../assets/js/category-colections.js"></script>
-    <script src="../assets/js/cart.js"></script>
-    <script src="../assets/js/product-details.js"></script>
-    <script src="../assets/js/check-order.js"></script>
 </body>
 
 </html>

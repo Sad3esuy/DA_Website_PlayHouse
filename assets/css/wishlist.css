@@ -1,88 +1,34 @@
-
-  
-  /* Page Content */
-  .page-content {
-    padding: 20px 0;
+/* Featured Products Section */
+.wish-contain_three{
+    margin-bottom: 50px;
+  }
+  .wish-contain_three .section-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .wish-contain_three .section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #20B2AA; /* Giữ màu đen như yêu cầu */
   }
   
-  .page-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
+  .wish-contain_three .section-header p {
+    font-size: 1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
   }
   
-  .page-title {
-    font-size: 28px;
-    font-weight: bold;
-    color: #20B2AA;
-  }
-  
-  .sorting {
-    display: flex;
-    align-items: center;
-  }
-  
-  .sorting label {
-    margin-right: 10px;
-  }
-  
-  .sorting select {
-    padding: 8px 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
-  }
-  
-  /* Products Grid */
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .main-nav ul {
-      gap: 10px;
-    }
-    
-    .page-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 15px;
-    }
-  }
-
-
   /* Grid sản phẩm */
-  /* .collections{
-    display: grid;
-    grid-template-columns: 5% 90%;
-    gap: 5px;
-  } */
-.contain-colections {
-        display: grid;
-        grid-template-columns: 15% 85%;
-        margin-bottom: 40px;
-        gap: 20px;
-    }
-  .contain-colections .products-grid {
+  .wish-contain_three .products-grid {
     display: grid;
     gap: 1rem; /* Giảm khoảng cách trên mobile */
     grid-template-columns: repeat(1, 1fr); /* 1 cột trên mobile */
     justify-items: center; /* Căn giữa trên mobile */
   }
-  .pagination{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 40px;
-  }
+  
   @media (min-width: 768px) and (max-width: 1024px) { /* iPad */
-    .contain-colections .products-grid {
+    .wish-contain_three .products-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 cột trên iPad */
         gap: 1.5rem; /* Tăng khoảng cách trên iPad */
         justify-items: center; /* Căn giữa trên iPad */
@@ -90,7 +36,7 @@
   }
   
   @media (min-width: 1024px) { /* Laptop/Desktop */
-    .contain-colections .products-grid {
+    .wish-contain_three .products-grid {
         grid-template-columns: repeat(4, 1fr); /* 4 cột trên desktop */
         gap: 2rem; /* Tăng khoảng cách trên desktop */
         justify-items: stretch; /* Căn đều trên desktop */
@@ -98,7 +44,7 @@
   }
   
   /* Thẻ sản phẩm */
-  .contain-colections .product-card {
+  .wish-contain_three .product-card {
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
@@ -110,11 +56,11 @@
     max-width: 300px; /* Giới hạn chiều rộng tối đa */
   }
   
-  .contain-colections .product-card:hover {
+  .wish-contain_three .product-card:hover {
     transform: translateY(-5px);
   }
   
-  .contain-colections .image-container {
+  .wish-contain_three .image-container {
     position: relative;
     height: 180px; /* Giảm chiều cao trên mobile */
     overflow: hidden;
@@ -122,12 +68,12 @@
   }
   
   @media (min-width: 768px) { /* iPad và lớn hơn */
-    .contain-colections .image-container {
+    .wish-contain_three .image-container {
         height: 250px; /* Tăng chiều cao trên iPad và desktop */
     }
   }
   
-  .contain-colections .image-container img {
+  .wish-contain_three .image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Đảm bảo hình ảnh chiếm toàn bộ ô mà không bị méo hoặc lệch */
@@ -138,8 +84,8 @@
     transform: scale(1.05);
   }
   
-  /* Badge - Chỉ áp dụng trong contain-colections */
-  .contain-colections .badges {
+  /* Badge - Chỉ áp dụng trong wish-contain_three */
+  .wish-contain_three .badges {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -160,14 +106,14 @@
     height: 28px; /* Giữ kích thước nhỏ trên mobile */
   }
   @media (min-width: 768px) { /* iPad và lớn hơn */
-    .contain-colections .badges {
+    .wish-contain_three .badges {
         padding: 8px 16px; /* Tăng padding trên iPad và desktop */
         font-size: 0.9rem; /* Tăng font-size trên iPad và desktop */
     }
   }
   
   /* Overlay buttons khi hover */
-  .contain-colections .overlay-buttons {
+  .wish-contain_three .overlay-buttons {
     position: absolute;
     top: 0;
     left: 0;
@@ -188,7 +134,6 @@
   
   .overlay-buttons button,
   .overlay-buttons a {
-    position: relative;
     background: #fff;
     border: none;
     border-radius: 50%;
@@ -200,35 +145,7 @@
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease;
   }
-    /* Tooltip mặc định ẩn */
-.overlay-buttons button .tooltip {
-  position: absolute;
-  bottom: -30px; /* điều chỉnh cho phù hợp */
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.8); 
-  color: #fff;
-  padding: 5px 8px;
-  font-size: 12px;
-  border-radius: 4px;
-  white-space: nowrap;
-  display: none;
-  pointer-events: none; /* để chuột không bị "bắt" vào tooltip */
-  z-index: 99;
-}
-
-/* Hover vào button thì hiển thị tooltip */
-.overlay-buttons button:hover .tooltip {
-  display: block;
-}
-.overlay-buttons button.wishlist-active {
-  background-color: red;
-}
-/* Và nếu muốn icon bên trong chuyển thành màu trắng */
-.overlay-buttons button.wishlist-active svg path {
-  fill: #fff;
-  stroke: #fff;
-}
+  
   .overlay-buttons button:hover,
   .overlay-buttons a:hover {
     background: #20B2AA;
@@ -265,18 +182,18 @@
   }
   
   /* Nội dung sản phẩm */
-  .contain-colections .product-info {
+  .wish-contain_three .product-info {
     padding: 12px; /* Giảm padding trên mobile */
   }
   
-  .contain-colections .product-info h3 {
+  .wish-contain_three .product-info h3 {
     font-size: 1rem; /* Giảm font-size trên mobile */
     margin-bottom: 8px; /* Giảm margin trên mobile */
     height: 2em; /* Giảm chiều cao của tên sản phẩm trên mobile */
     overflow: hidden;
   }
   
-  .contain-colections .price {
+  .wish-contain_three .price {
     font-size: 0.9rem; /* Giảm font-size trên mobile */
     font-weight: bold;
     color: #20B2AA;
@@ -290,11 +207,11 @@
   }
   
   @media (min-width: 768px) { /* iPad và lớn hơn */
-    .contain-colections .product-info {
+    .wish-contain_three .product-info {
         padding: 15px; /* Tăng padding trên iPad và desktop */
     }
   
-    .contain-colections .product-info h3 {
+    .wish-contain_three .product-info h3 {
         font-size: 1.1rem; /* Tăng font-size trên iPad và desktop */
         margin-bottom: 10px; /* Tăng margin trên iPad và desktop */
         height: 2.2em; /* Tăng chiều cao của tên sản phẩm trên iPad và desktop */
@@ -302,13 +219,45 @@
         text-align: center;
     }
   
-    .contain-colections .price {
+    .wish-contain_three .price {
         font-size: 1rem; /* Tăng font-size trên iPad và desktop */
     }
   
     .original-price {
         font-size: 0.9rem; /* Tăng font-size trên iPad và desktop */
         margin-left: 8px; /* Tăng margin trên iPad và desktop */
+    }
+  }
+  
+  /* Button Xem tất cả */
+  .view-all {
+    text-align: center;
+    margin-top: 20px; /* Giảm margin trên mobile */
+    margin-bottom: 20px; /* Giảm margin trên mobile */
+  }
+  
+  .view-all a {
+    display: inline-block;
+    background: #20B2AA;
+    color: #fff;
+    padding: 10px 24px; /* Giảm padding trên mobile */
+    border-radius: 25px;
+    transition: transform 0.3s ease;
+    text-decoration: none; /* Bỏ gạch chân */
+  }
+  
+  .view-all a:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (min-width: 768px) { /* iPad và lớn hơn */
+    .view-all {
+        margin-top: 30px; /* Tăng margin trên iPad và desktop */
+        margin-bottom: 30px; /* Tăng margin trên iPad và desktop */
+    }
+  
+    .view-all a {
+        padding: 12px 30px; /* Tăng padding trên iPad và desktop */
     }
   }
   
@@ -320,7 +269,7 @@
     z-index: 9999;
   }
   
-  .contain-colections .toast {
+  .wish-contain_three .toast {
     background: #333;
     color: #fff;
     padding: 12px 16px; /* Giảm padding trên mobile */
@@ -331,7 +280,7 @@
   }
   
   @media (min-width: 768px) { /* iPad và lớn hơn */
-    .contain-colections .toast {
+    .wish-contain_three .toast {
         padding: 15px 20px; /* Tăng padding trên iPad và desktop */
         margin-top: 10px; /* Tăng margin trên iPad và desktop */
     }
@@ -343,141 +292,65 @@
     90% { opacity: 1; transform: translateY(0); }
     100% { opacity: 0; transform: translateY(20px); }
   }
-
-
-/* CSS3 cho sidebar */
-aside {
-    border-radius: 8px;
-    padding: 10px;
-    width: 200px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-aside p {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 15px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #e0e0e0;
-}
-
-.category-row {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.col {
-    display: flex;
-    align-items: center;
-    transition: all 0.3s ease;
-}
-
-.col:hover {
-    transform: translateX(5px);
-}
-
-/* Custom radio buttons */
-.col input[type="radio"] {
-    display: none;
-}
-
-.col label {
-    position: relative;
-    padding-left: 30px;
-    cursor: pointer;
-    font-size: 16px;
-    color: #555;
-    transition: color 0.3s ease;
-}
-
-.col label::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 18px;
-    height: 18px;
-    border: 2px solid #ddd;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-}
-
-.col input[type="radio"]:checked + label {
-    color: #20B2AA;
-    font-weight: 600;
-}
-
-.col input[type="radio"]:checked + label::before {
-    border-color: #20B2AA;
-    background-color: #fff;
-}
-
-.col input[type="radio"]:checked + label::after {
-    content: '';
-    position: absolute;
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #20B2AA;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    aside {
-        width: 100%;
-    }
-    
-    .category-row {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-    
-    .col {
-        width: calc(50% - 5px);
-    }
-    .pagination button {
-        width: 35px;
-        height: 35px;
-        font-size: 12px;
-    }
-}
+  .wishlist-active {
+  background-color: white;
+  position: relative;
+  }
   
-/* Pagination Styles */
-.pagination {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 30px;
+  .wishlist-active svg {
+  stroke: red;
+  }
+  
+  button {
+  position: relative;
+  }
+  
+  .tooltip {
+  visibility: hidden;
+  width: 80px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the button */
+  left: 50%;
+  margin-left: -40px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  }
+  
+  button:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  }
+  .wish-page-title{
+    margin-top: 20px;
+    color: #20B2AA;
+    text-align: center;
+    margin-bottom: 20px;
 }
-
-.pagination button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid #ddd;
-    background-color: white;
+  .page-title {
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 0;
+  }
+  
+  .page-title h1 {
+    font-size: 28px;
     color: #333;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.pagination button:hover {
-    background-color: #f0f0f0;
-}
-
-.pagination button.active {
-    background-color: #20B2AA;
-    color: white;
-    border-color: #20B2AA;
-}
+    margin-bottom: 10px;
+  }
+  
+  .page-title p {
+    color: #666;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }

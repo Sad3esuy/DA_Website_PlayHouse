@@ -281,129 +281,111 @@
         <div class="container">
             <ul>
                 <li><a href="index.html">Trang chủ</a></li>
-                <li><a href="/danh-muc">Danh mục</a></li>
-                <li>Tất cả sản phẩm</li>
+                <li><a href="/danh-muc">Labubu</a></li>
+                <li>Labubu Mokoko Fairy Tail - Mokoko V5 - Size 18cm</li>
             </ul>
         </div>
     </div>
     <main>
         <div class="container">
-            <div class="page-header">
-                <h1 class="page-title">Tất cả sản phẩm</h1>
-                <div class="sorting">
-                    <label for="sort-select">Sắp xếp:</label>
-                    <select id="sort-select">
-                        <option>Tên A → Z</option>
-                        <option>Tên Z → A</option>
-                        <option>Giá thấp đến cao</option>
-                        <option>Giá cao đến thấp</option>
-                        <option>Mới nhất</option>
-                    </select>
+            <div class="product-details-container">
+                <!-- Product Gallery -->
+                <div class="product-details-gallery">
+                    <div class="product-details-gallery-container">
+                        <div class="main-image-container">
+                            <img src="../assets/images/sanpham/labubu/sanpham-labubu-4.jpg" class="main-image" id="mainImage">
+                        </div>
+                        <div class="thumbnails">
+                            <img src="../assets/images/sanpham/labubu/sanpham-labubu-1.jpg" class="thumbnail active" onclick="changeImage(this)">
+                            <img src="../assets/images/sanpham/labubu/sanpham-labubu-2.jpg" class="thumbnail" onclick="changeImage(this)">
+                            <img src="../assets/images/sanpham/labubu/sanpham-labubu-3.jpg" class="thumbnail" onclick="changeImage(this)">
+                            <img src="../assets/images/sanpham/labubu/sanpham-labubu-4.jpg" class="thumbnail" onclick="changeImage(this)">
+                            <img src="../assets/images/sanpham/babythree/sanpham-babythree-1.jpg" class="thumbnail" onclick="changeImage(this)">
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <!-- Toast container (nếu cần hiển thị thông báo) -->
-            <div id="toast-container"></div>
-
-            <div class="contain-colections">
-                <!-- Cột bên trái (15%) - có thể là menu hoặc danh mục -->
-                <aside>
-                    <!-- Nội dung sidebar (tùy ý) -->
-                    <p>Danh mục sản phẩm</p>
-                    <div class="category-row">
-                        <div class="col">
-                            <input type="radio" id="all" name="danh-muc-sanpham" value="list-all">
-                            <label for="all">Tất cả</label>
-                        </div>
-                        <div class="col">
-                            <input type="radio" id="labubu" name="danh-muc-sanpham" value="list-labubu">
-                            <label for="labubu">Labubu</label>
-                        </div>
-                        <div class="col">
-                            <input type="radio" id="babythree" name="danh-muc-sanpham" value="list-babythree">
-                            <label for="babythree">BabyThree</label>
-                        </div>
-                        <div class="col">
-                            <input type="radio" id="lego" name="danh-muc-sanpham" value="list-lego">
-                            <label for="lego">Lego</label>
-                        </div>
-                        <div class="col">
-                            <input type="radio" id="mohinh" name="danh-muc-sanpham" value="list-mohinh">
-                            <label for="mohinh">Mô hình</label>
+                <!-- Product Info -->
+                <div class="product-details-info">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <h1 class="product-details-title">Labubu Mokoko Fairy Tail - Mokoko V5 - Size 18cm</h1>
+                    </div>
+                    <div class="product-details-brand">
+                        <span>Mã sản phẩm:</span>
+                        <span class="product-details-status">M1825</span>
+                    </div>
+    
+                    <div class="product-details-price">999,000₫</div>
+    
+                    <div class="quantity">
+                        <div class="quantity-control">
+                            <button class="quantity-btn" onclick="decreaseQuantity()">−</button>
+                            <input type="text" class="quantity-input" id="quantity" value="1">
+                            <button class="quantity-btn" onclick="increaseQuantity()">+</button>
                         </div>
                     </div>
-                    <!-- ... -->
-                </aside>
-
-                <!-- Cột bên phải (85%) - khu vực hiển thị danh sách sản phẩm -->
-                <!-- <div>
-                    <div class="products-grid"> -->
-                <!-- Bắt đầu 1 sản phẩm -->
-                <!-- <div class="product-card">
-                            <div class="image-container"> -->
-                <!-- Badge "BÁN CHẠY" -->
-                <!-- <span class="badges" style="background-color: #20B2AA;">Bán chạy</span> -->
-                <!-- Ảnh sản phẩm -->
-                <!-- <img src="../sanpham-babythree-1.jpg"
-                                    alt="LABUBU Limited Edition Merlion Plush Series" /> -->
-                <!-- Nút overlay hiển thị khi hover -->
-                <!-- <div class="overlay-buttons"> -->
-                <!-- Nút giỏ hàng -->
-                <!-- <button aria-label="Thêm vào giỏ hàng"> -->
-                <!-- Icon giỏ hàng (cart) dạng SVG đơn giản -->
-                <!-- <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <circle cx="9" cy="21" r="1"></circle>
-                                            <circle cx="20" cy="21" r="1"></circle>
-                                            <path
-                                                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61l1.38-7.39H6">
-                                            </path>
-                                        </svg>
-                                    </button> -->
-                <!-- Nút yêu thích (heart) -->
-                <!-- <button aria-label="Yêu thích">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <path
-                                                d="M20.84 4.61c-1.54-1.42-3.95-1.61-5.66-.39L12 6.09l-3.18-1.87C7.11 3.92 4.7 4.09 3.16 5.52c-2.18 2.02-2.26 5.39-.18 7.56l7.27 7.28c.39.39 1.02.39 1.41 0l7.27-7.28c2.08-2.17 2-5.54-.18-7.56z">
-                                            </path>
-                                        </svg>
-                                    </button> -->
-                <!-- Nút xem chi tiết (eye) -->
-                <!-- <button aria-label="Xem chi tiết">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M1 12s4.5-7 11-7 11 7 11 7-4.5 7-11 7-11-7-11-7z"></path>
-                                            <circle cx="12" cy="12" r="3"></circle>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div> -->
-                <!-- Thông tin sản phẩm -->
-                <!-- <div class="product-info">
-                                <h3>LABUBU Limited Edition Merlion Plush Series</h3>
-                                <div>
-                                    <span class="price">499.000 đ</span>
-                                    <span class="original-price">599.000 đ</span>
-                                </div>
+    
+                    <div class="product-details-buttons">
+                        <button class="product-details-btn btn-outline">THÊM VÀO GIỎ</button>
+                        <button class="product-details-btn btn-primary">MUA NGAY</button>
+                        <button class="wishlist-btn"><i class="material-icons">favorite</i></button>
+                    </div>
+    
+                    <div class="hotline">
+                        Hotline: <span>1900 xxxx</span> (7:30 - 22:00)
+                    </div>
+    
+                    <div class="benefits">
+                        <div class="benefit">
+                            <i class="material-icons">electric_rickshaw</i>
+                            Giao hàng toàn quốc
+                        </div>
+                        <div class="benefit">
+                            <i class="material-icons">redeem</i>
+                            Ưu đãi hấp dẫn
+                        </div>
+                        <div class="benefit">
+                            <i class="material-icons">inventory</i>
+                            Sản phẩm chính hãng
+                        </div>
+                    </div>
+                    <div class="accordions">
+                        <div class="accordion">
+                            <button class="accordion-button" onclick="toggleAccordion(this)">
+                                <span>Mô tả sản phẩm</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <p><strong>Brand:</strong> POP MART<br>
+                                    <strong>Size:</strong> 11×8×17.5cm(excluding hanging loop)<br>
+                                    <strong>Material:</strong>11×8×22cm(including hanging loop)<br>
+                                    <strong>Shell:</strong> 66%Polyester, 25%PVC, 9%ABS<br>
+                                    <strong>Stuffing:</strong> 95%Polyester, 5%Iron Wire</p>
                             </div>
-                        </div> -->
-                <!-- Kết thúc 1 sản phẩm -->
-
-
-                <section class="featured-products">
-                    <div class="container">
-                        <div class="products-grid" id="productsGrid">
-                            <!-- Các thẻ sản phẩm sẽ được tạo bằng JS -->
+                        </div>
+                        <div class="accordion">
+                            <button class="accordion-button" onclick="toggleAccordion(this)">
+                                <span>Chính sách giao hàng</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Nội dung đang được cập nhật</p>
+                            </div>
+                        </div>
+                        <div class="accordion">
+                            <button class="accordion-button" onclick="toggleAccordion(this)">
+                                <span>Chính sách đổi trả</span>
+                                <i class="fas fa-chevron-down accordion-icon"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <p><strong>Điều kiện đổi trả</strong></p>
+                                <p>Quý Khách hàng cần kiểm tra tình trạng hàng hóa và có thể đổi hàng/ trả lại hàng ngay
+                                    tại thời điểm giao/nhận hàng trong những trường hợp sau:</p>
+                                <p> Khách hàng có trách nhiệm trình giấy tờ liên quan chứng minh sự thiếu sót trên để
+                                    hoàn thành việc hoàn trả/đổi trả hàng hóa. </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="pagination">
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <!-- ... -->
-                    </div>
-                </section>
-                <!-- Phân trang (nếu cần) -->
+                </div>
             </div>
         </div>
     </main>
@@ -432,8 +414,9 @@
             </a>
         </div>
     </div>
+
     <footer>
-        <div class="footer-content container">
+        <div class="container footer-content">
             <div class="footer-section">
                 <h3>Về Chúng Tôi</h3>
                 <ul>
@@ -462,20 +445,20 @@
                 <p>Email: support@example.com</p>
             </div>
         </div>
-        <div class="footer-bottom container">
+        <div class="container footer-bottom">
             <p>© 2025 Shop Phụ Kiện, Gấu Bông, Mô Hình. All rights reserved.</p>
         </div>
+        <script src="../assets/js/search.js"></script>
+        <script src="../assets/js/login.js"></script>
+        <script src="../assets/js/main.js"></script>
+        <script src="../assets/js/home-main-1.js"></script>
+        <script src="../assets/js/home-main-2.js"></script>
+        <script src="../assets/js/colections.js"></script>
+        <script src="../assets/js/category-colections.js"></script>
+        <script src="../assets/js/cart.js"></script>
+        <script src="../assets/js/product-details.js"></script>
+        <script src="../assets/js/check-order.js"></script>
     </footer>
-    <script src="../assets/js/search.js"></script>
-    <script src="../assets/js/login.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/home-main-1.js"></script>
-    <script src="../assets/js/home-main-2.js"></script>
-    <script src="../assets/js/colections.js"></script>
-    <script src="../assets/js/category-colections.js"></script>
-    <script src="../assets/js/cart.js"></script>
-    <script src="../assets/js/product-details.js"></script>
-    <script src="../assets/js/check-order.js"></script>
 </body>
 
 </html>

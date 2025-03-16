@@ -1,0 +1,99 @@
+/* Phần giới thiệu */
+.intro-section {
+    padding: 20px;
+}
+
+.gdtilte h1 {
+    font-size: 2.5rem;
+    color: #20B2AA;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.intro-section p {
+    font-size: 16px;
+    color: #333;
+    line-height: 2;
+}
+
+.intro-section strong {
+    color: #20B2AA;
+}
+
+/* Phần đối tác */
+.partner {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.partner-tilte h2 {
+    font-size: 24px;
+    color: #2c2b2b;
+    margin-bottom: 20px;
+}
+
+/* Hình ảnh đối tác */
+.partner-img {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.partner-img div {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.partner-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    filter: grayscale(100%);
+}
+
+/* Tablet (iPad) */
+@media (max-width: 1024px) {
+    .gdtilte h1 {
+        font-size: 2rem;
+    }
+
+    .partner-img div {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Mobile (Smartphone) */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .gdtilte h1 {
+        font-size: 1.8rem;
+    }
+
+    .intro-section p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .partner-tilte h2 {
+        font-size: 20px;
+    }
+
+    .partner-img {
+        gap: 15px;
+    }
+
+    .partner-img div {
+        width: 60px;
+        height: 60px;
+    }
+}

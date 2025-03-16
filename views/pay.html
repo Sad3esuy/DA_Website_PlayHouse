@@ -17,6 +17,11 @@
     <link rel="stylesheet" href="../assets/css/colections.css">
     <link rel="stylesheet" href="../assets/css/contact.css">
     <link rel="stylesheet" href="../assets/css/pay.css">
+    <link rel="stylesheet" href="../assets/css/introduce.css">
+    <link rel="stylesheet" href="../assets/css/cart.css">
+    <link rel="stylesheet" href="../assets/css/product-details.css">
+    <link rel="stylesheet" href="../assets/css/check-order.css">
+    <link rel="stylesheet" href="../assets/css/wishlist.css">
 </head>
 
 <body>
@@ -41,7 +46,7 @@
                     <div class="navbar-content">
                         <div class="nav-links">
                             <div class="navbar-link"><a href="index.html">Trang chủ</a></div>
-                            <div class="navbar-link"><a href="#">Giới thiệu</a></div>
+                            <div class="navbar-link"><a href="introduce.html">Giới thiệu</a></div>
                             <div class="nav-item">
                                 <a href="colections.html" class="product-link">
                                     <svg class="lightning-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -62,7 +67,7 @@
                                 </div>
                             </div>
                             <div class="navbar-link"><a href="contact.html">Liên hệ</a></div>
-                            <div class="navbar-link"><a href="#">Kiểm tra đơn hàng</a></div>
+                            <div class="navbar-link"><a href="check-order.html">Kiểm tra đơn hàng</a></div>
                         </div>
                     </div>
                 </nav>
@@ -74,11 +79,11 @@
                         <img src="../assets/images/user.png" alt="User">
                     </button>
                     <button class="icon-btn" title="Yêu thích">
-                        <img src="../assets/images/heart.png" alt="Heart">
+                        <a href="wishlist.html"><img src="../assets/images/heart.png" alt="Heart"></a>
                         <span class="badge">1</span>
                     </button>
                     <button class="icon-btn" title="Giỏ hàng">
-                        <img src="../assets/images/shopcart.png" alt="Cart">
+                        <a href="cart.html"><img src="../assets/images/shopcart.png" alt="Cart"></a>
                         <span class="badge">0</span>
                     </button>
                 </nav>
@@ -98,7 +103,7 @@
         </div>
         <div class="nav-links">
             <a href="index.html"><i class="material-icons">home</i> Trang chủ</a>
-            <a href="#"><i class="material-icons">info</i>Giới thiệu</a>
+            <a href="introduce.html"><i class="material-icons">info</i>Giới thiệu</a>
             <div class="nav-item">
                 <a href="colections.html" class="product-link" id="mobileProductLink">
                     <i class="material-icons">shopping_bag</i>Sản phẩm
@@ -114,7 +119,7 @@
                 </div>
             </div>
             <a href="contact.html"><i class="material-icons">headset_mic</i>Liên hệ</a>
-            <a href="#"><i class="material-icons">local_shipping</i>Kiểm tra đơn hàng</a>
+            <a href="check-order.html"><i class="material-icons">local_shipping</i>Kiểm tra đơn hàng</a>
         </div>
     </div>
     <!-- Khối Tìm Kiếm Ẩn (Slide-down) -->
@@ -141,11 +146,11 @@
                     <img src="../assets/images/user.png" alt="User">
                 </button>
                 <button class="icon-btn" title="Yêu thích">
-                    <img src="../assets/images/heart.png" alt="Heart">
+                    <a href="wishlist.html"><img src="../assets/images/heart.png" alt="Heart"></a>
                     <span class="badge">1</span>
                 </button>
                 <button class="icon-btn" title="Giỏ hàng">
-                    <img src="../assets/images/shopcart.png" alt="Cart">
+                    <a href="cart.html"><img src="../assets/images/shopcart.png" alt="Cart"></a>
                     <span class="badge">0</span>
                 </button>
             </div>
@@ -276,7 +281,7 @@
         <div class="container">
             <div class="pay-hero-section">
                 <div class="back-to-cart-section">
-                    <a href="" class="pay-cancel-button"><i class="material-icons">arrow_back_ios_new</i> <strong>Quay lại giỏ hàng</strong></a>
+                    <a href="cart.html" class="pay-cancel-button"><i class="material-icons">arrow_back_ios_new</i> <strong>Quay lại giỏ hàng</strong></a>
                 </div>
                 <div class="pay-container_first ">
                     <h1>Thanh toán đơn hàng</h1>
@@ -372,6 +377,10 @@
                                     <input type="text" id="couponInput" placeholder="Nhập mã giảm giá" />
                                     <button type="submit" class="btn-coupon">Áp dụng</button>
                                 </div>
+                                <div class="total-temp-row">
+                                    <div>Tạm tính</div>
+                                    <div>1,200,000 đ</div>
+                                </div>
                                 <div class="shipping-row">
                                     <div>Phí vận chuyển</div>
                                     <div>30,000 đ</div>
@@ -400,7 +409,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="pay-submit-button">Đặt hàng</button>
+                        <a href="confirm.html" class="pay-submit-button">Đặt hàng</a>
                     </div>
                 </div>
             </form>
@@ -472,6 +481,9 @@
     <script src="../assets/js/home-main-2.js"></script>
     <script src="../assets/js/colections.js"></script>
     <script src="../assets/js/category-colections.js"></script>
+    <script src="../assets/js/cart.js"></script>
+    <script src="../assets/js/product-details.js"></script>
+    <script src="../assets/js/check-order.js"></script>
 </body>
 
 </html>
